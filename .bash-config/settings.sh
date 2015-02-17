@@ -4,6 +4,8 @@
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+# make autocompletion case-insensitive
+bind "set completion-ignore-case on"
 
 # make "**" match all files in all levels of subdirectories
 shopt -s globstar
