@@ -19,6 +19,14 @@ boldblue="\e[1;34m"
 boldviolet="\e[1;35m"
 boldcyan="\e[1;36m"
 
+# Use different coloring when I'm logged into a different machine via ssh.
+usercolor=${violet}
+if [ -z "$SSH_CONNECTION" ]; then
+    hostcolor=${usercolor}
+else
+    hostcolor=${blue}
+fi
+
 # $(__git_ps1) displays git repository status in the prompt.
 # This is the single best customization that I had ever made to my shell,
 # period.  It's extremely convenient, saved me lots of time and actually
@@ -31,5 +39,5 @@ GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
-export PS1="${violet}\u${blue}@\h ${cyan}\w${normal}\$(__git_ps1)\n\\$ "
+export PS1="${usercolor}\u${hostcolor}@\h ${cyan}\w${normal}\$(__git_ps1)\n\\$ "
 export PS4='${bold}>>> ${normal}'
