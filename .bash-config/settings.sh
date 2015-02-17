@@ -17,9 +17,9 @@ shopt -s checkwinsize
 
 # HISTORY
 
-# save whole history
-export HISTFILESIZE=-1
-export HISTSIZE=-1
+# save LOTS of history
+export HISTFILESIZE=10000000
+export HISTSIZE=10000000
 
 # don't store duplicated commands in history
 export HISTCONTROL=ignoredups
