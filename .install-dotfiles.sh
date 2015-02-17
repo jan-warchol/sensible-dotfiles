@@ -9,6 +9,7 @@ if [ -z $1 ]; then echo "Usage: bash .install-dotfiles.sh <path>"; exit 1; fi
 REPO_PATH="$(readlink --canonicalize-missing $1)"
 echo $REPO_PATH > "$HOME/.dotfiles-repo-path"
 dotfiles() { git --work-tree="$HOME" --git-dir="$REPO_PATH" "$@"; }
+cd
 
 # we want something between a normal and a bare repo
 git clone --no-checkout https://github.com/janek-warchol/dotfiles "$REPO_PATH"
@@ -20,7 +21,6 @@ dotfiles ls-files
 echo ""
 
 # list conflicting files
-cd
 for f in `dotfiles ls-files`; do
   if [[ -f "$f" && $(dotfiles diff "$f") ]]; then
     if [ "$2" == "--overwrite" ]; then
