@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# redefine some commands
-alias df='df --human-readable'
-alias grep='grep --line-number --color=always'
-alias rgrep='rgrep --line-number --color=always'
+# redefine some commands by adding "default" settings
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias rgrep='rgrep --color=auto'
+alias less='less --RAW-CONTROL-CHARS'  # parses color codes!
 alias mkdir='mkdir --parents'
 
 # more ls aliases
@@ -13,14 +14,18 @@ alias la='ls --almost-all --file-type'
 alias ll='ls -l --human-readable --almost-all --file-type'
 alias lld='ll --group-directories-first'
 
-# Show a notification when a command finishes (taken from Ubuntu's default .bashrc).
-# Use by appending to the command after a semicolon:  sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# coloful grep (will color matches even when piped to less)
+alias grp='grep --line-number --color=always'
+alias rgp='rgrep --line-number --color=always'
+alias egp='egrep --line-number --color=always'
 
-# other
+# miscellaneous
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
-alias ,='less --RAW-CONTROL-CHARS --chop-long-lines' # parses color codes!
+alias ,='less --chop-long-lines'
 mdc() { mkdir --parents "$@"; cd "$@"; }
-alias sagi='sudo apt-get install'
+
+# Show a notification when a command finishes - use like this:  sleep 10; alert
+# Taken from Ubuntu's default .bashrc.
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
