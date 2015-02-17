@@ -25,6 +25,10 @@ alias la='ls --almost-all --file-type'
 alias ll='ls -l --human-readable --almost-all --file-type'
 alias lld='ll --group-directories-first'
 
+# Show a notification when a command finishes (taken from Ubuntu's default .bashrc).
+# Use by appending to the command after a semicolon:  sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 # other
 alias u='cd ..'
 alias uu='cd ../..'
