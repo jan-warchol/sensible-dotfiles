@@ -10,3 +10,11 @@ else
     echo "ERROR: your dotfiles repository isn't set up properly -"
     echo "       .dotfiles-repo-path file is missing."
 fi
+
+# Source configuration files from $HOME/.bash-config/ if they exist
+configs=$HOME/.bash-config
+if [[ -d $configs && $(ls ${configs}/*.sh 2>/dev/null) ]]; then
+    for file in $HOME/.bash-config/*.sh; do
+        . $file
+    done
+fi
