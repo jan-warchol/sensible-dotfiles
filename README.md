@@ -6,14 +6,14 @@ subset of them that I consider useful for everyone.
 Installation
 ------------
 
-Download and run the [installation script]
+Clone the repo and run the [installation script]
 (https://github.com/janek-warchol/dotfiles/blob/master/.install-dotfiles.sh):
 
-    wget --no-verbose https://raw.githubusercontent.com/janek-warchol/dotfiles/master/.install-dotfiles.sh
-    bash .install-dotfiles.sh ~/.dotfiles
+    git clone https://github.com/janek-warchol/dotfiles.git ~/.dotfiles
+    ~/.dotfiles/.install-dotfiles.sh
 
 It will make a backup of your existing config files before installing new ones
-(unless you specify a second argument `--overwrite`).
+(unless you add `--overwrite` argument).
 
 
 
