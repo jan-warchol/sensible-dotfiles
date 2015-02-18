@@ -16,7 +16,6 @@ alias v='vim'
 # http://stackoverflow.com/questions/20032764/how-to-use-bash-completion-functions-that-are-defined-on-the-fly
 
 complete -o default -o nospace -F _git git g
-complete -o default -o nospace -F _git git dotfiles
 if [ -n "$(type -t _completion_loader)" ]; then
     _completion_loader git
 fi
