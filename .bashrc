@@ -18,14 +18,3 @@ if [[ -d $configs && $(ls ${configs}/*.sh 2>/dev/null) ]]; then
         . $file
     done
 fi
-
-git_version=$(git --version | cut -d' ' -f3)
-if [[ $(echo $git_version | cut -d'.' -f1) < 2 ]]; then
-    echo -en "You are using an old version of git ($git_version). I ${bold}"
-    echo -en "strongly${normal} recommend installing the\nlatest version - "
-    echo -e "it's much more user-friendly, and it really makes a difference."
-    echo -e "On Debian-based systems you can do this with\n"
-    echo "sudo add-apt-repository ppa:git-core/ppa"
-    echo "sudo apt-get update"
-    echo "sudo apt-get install git"
-fi

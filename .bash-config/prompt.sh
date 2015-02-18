@@ -19,7 +19,7 @@ boldblue="\e[1;34m"
 boldviolet="\e[1;35m"
 boldcyan="\e[1;36m"
 
-# Use different coloring when I'm logged into a different machine via ssh.
+# Use different coloring when I'm logged in via ssh.
 usercolor=${violet}
 if [ -z "$SSH_CONNECTION" ]; then
     hostcolor=${usercolor}
