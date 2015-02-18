@@ -2,22 +2,24 @@
 
 # First, some color definitions.  Colored prompt stands out in the sea
 # of text, which makes it much easier to find things in your terminal.
-normal="\e[00m"
-bold="\e[1;37m"
 
-red="\e[00;31m"
-green="\e[00;32m"
-yellow="\e[00;33m"
-blue="\e[00;34m"
-violet="\e[00;35m"
-cyan="\e[00;36m"
+# Using \[ and \] around colors is necessary to prevent strange issues!
+normal="\[\e[00m\]"
+bold="\[\e[1;37m\]"
 
-boldred="\e[1;31m"
-boldgreen="\e[1;32m"
-boldyellow="\e[1;33m"
-boldblue="\e[1;34m"
-boldviolet="\e[1;35m"
-boldcyan="\e[1;36m"
+red="\[\e[00;31m\]"
+green="\[\e[00;32m\]"
+yellow="\[\e[00;33m\]"
+blue="\[\e[00;34m\]"
+violet="\[\e[00;35m\]"
+cyan="\[\e[00;36m\]"
+
+boldred="\[\e[1;31m\]"
+boldgreen="\[\e[1;32m\]"
+boldyellow="\[\e[1;33m\]"
+boldblue="\[\e[1;34m\]"
+boldviolet="\[\e[1;35m\]"
+boldcyan="\[\e[1;36m\]"
 
 # Use different coloring when I'm logged in via ssh.
 usercolor=${violet}
