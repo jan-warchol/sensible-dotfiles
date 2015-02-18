@@ -1,0 +1,78 @@
+[alias]
+    a = add
+    aa = add --all
+    ap = add --patch   # interactively select hunks to add, very useful
+    au = add --update   # stage only tracked files
+
+    b = branch
+    bv = branch --verbose --verbose   # also prints SHAs and upstream branches
+
+    c = checkout
+    c0 = checkout HEAD~0   # detach HEAD e.g. for throw-away experiments
+
+    k = commit   # no git command starts with k!
+    ka = commit --all
+    km = commit -m
+    kma = commit --all -m
+
+    d = diff --color=always   # force coloring for use with less -R
+    dw = diff --color=always --word-diff=color
+
+    f = fetch --prune
+    fa = fetch --all --prune
+
+    g = grep --color=always --line-number
+    g5 = grep --color=always --line-number --context 5
+    gh5 = grep --color=always --heading --context 5
+
+    l = log --color=always --decorate
+    lo = log --color=always --decorate --oneline --graph
+    lp = log --color=always --decorate --patch
+    lpw = log --color=always --decorate --patch --word-diff=color
+
+    rba = rebase --abort
+    rb = rebase
+    rbc = rebase --continue
+    rbo = rebase --onto   # quite useful, see examples in 'git help rebase'
+    ri = rebase --interactive
+    ri5 = rebase --interactive HEAD~5
+
+    rt = remote --verbose
+
+    rs = reset
+    rs1 = reset HEAD~1
+
+    sh = stash
+    shp = stash pop
+
+    st = status
+
+    # temporarily ignoring files, see
+    # http://gitready.com/intermediate/2009/02/18/temporarily-ignoring-files.html
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[a-z]"
+
+[core]
+    # display non-ASCII characters (e.g. Polish) instead of quoting them:
+    quotepath = false
+
+[diff]
+    # detect copied stuff and display it appropriately
+    renames = copies
+
+[help]
+    # correct and run mistyped commands after 1.5 sec delay
+    autocorrect = 15
+
+[merge]
+    # in case of merge conflict also show common ancestor version
+    conflictstyle = diff3
+
+[rebase]
+    # automatically process fixup! commits when rebasing interactively
+    autosquash = true
+
+[rerere]
+    # Reuse recorded resolution of conflicted merges, see 'git help rerere'
+    enabled = true
