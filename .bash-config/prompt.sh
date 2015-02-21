@@ -35,11 +35,9 @@ fi
 # prevented some serious mistakes - I LOVE IT!!  See the documentation at
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_DESCRIBE_STYLE="branch"
-GIT_PS1_SHOWUPSTREAM="auto git"
+GIT_PS1_SHOWUPSTREAM="verbose git"
 
 export PS1="${usercolor}\u${hostcolor}@\h ${cyan}\w${normal}\$(__git_ps1)\n\\$ "
 export PS4='${bold}>>> ${normal}'

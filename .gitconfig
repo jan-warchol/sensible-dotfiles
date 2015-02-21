@@ -1,22 +1,30 @@
 [alias]
+
+    # SIMPLE "SHORTCUT" ALIASES
+
     a = add
     aa = add --all
     ap = add --patch   # interactively select hunks to add, very useful
-    au = add --update   # stage only tracked files
+    au = add --update   # stage only tracked files - usually you want this rather than --all
 
     b = branch
     bv = branch --verbose --verbose   # also prints SHAs and upstream branches
 
     c = checkout
     c0 = checkout HEAD~0   # detach HEAD e.g. for throw-away experiments
+    cb = checkout -b
 
-    k = commit   # no git command starts with k!
+    k = commit   # no git command starts with 'k', and 'k' matches pronunciation!
     ka = commit --all
     km = commit -m
-    kma = commit --all -m
+    kma = commit --all -m   # 'kma' instead of 'kam' because it's easier to type
+                            # and won't get confused with amending
+    amn = commit --amend
 
     d = diff --color=always   # force coloring for use with less -R
-    dw = diff --color=always --word-diff=color
+    dc = diff --color=always --cached   # preview changes staged for commit
+    wd = diff --color=always --word-diff=color   # mnemonic: Word-Diff
+    wdc = diff --color=always --word-diff=color --cached
 
     f = fetch --prune
     fa = fetch --all --prune
@@ -34,8 +42,8 @@
     rb = rebase
     rbc = rebase --continue
     rbo = rebase --onto   # quite useful, see examples in 'git help rebase'
-    ri = rebase --interactive
-    ri5 = rebase --interactive HEAD~5
+    rbi = rebase --interactive
+    rbi5 = rebase --interactive HEAD~5
 
     rt = remote --verbose
 
@@ -45,13 +53,61 @@
     sh = stash
     shp = stash pop
 
+    s = status --short --branch   # I no longer need verbose info from long status
     st = status
+
+
+
+    # MORE SOPHISTICATED ALIASES
+
+    # "smart amend"
+    #
+    # Fixup a specified commit and use rebase to merge the fixup (like commit --amend,
+    # but for commits before the currently checked-out one - see the description of
+    # --fixup option in `git commit` manpage).  By default the fixup will incorporate
+    # staged changes, but you can also use `-a` option (or specify paths), like with
+    # `git commit` itself.
+    # Don't use this if there was a merge after the commit to be amended.
+    #
+    fix = "!sh -c 'set -e; \
+        commit_id=$(git rev-parse $1); \
+        shift; \
+        git commit --fixup $commit_id $@; \
+        if [ ! $(git diff --quiet HEAD) ]; then \
+            dirtytree=1; \
+            echo \"Stashing your other changes...\"; \
+            git stash save \"Stashed before amending $commit_id\"; \
+        fi; \
+        git rebase --interactive --autosquash $commit_id~; \
+        if [ -n dirtytree ]; then \
+            git stash pop; \
+        fi' -"
+
+    # trash - discard changes
+    #
+    # Use this command instead of `reset --hard`, as it makes it possible to undo
+    # the trashing.  Right now this is implemented simply by using `stash` command,
+    # so to bring back discarded changes you just do `git stash pop <stash>`.
+    #
+    # Useful options:
+    #     -p    select which hunks to discard
+    #     -u    also remove untracked files
+    #     -a    also remove untracked and ignored files
+    #
+    # TODO:
+    # - add support for trashing changes in indvidual files
+    # - rewrite this as a standalone git command
+    # - send a patch upstream?
+    #
+    trash = !sh -c 'git stash save "$@" "changes trashed on $(date +\"%Y-%m-%d %H:%M\")"' -
 
     # temporarily ignoring files, see
     # http://gitready.com/intermediate/2009/02/18/temporarily-ignoring-files.html
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[a-z]"
+
+
 
 [core]
     # display non-ASCII characters (e.g. Polish) instead of quoting them:
