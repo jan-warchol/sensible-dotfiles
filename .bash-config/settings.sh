@@ -13,6 +13,9 @@ shopt -s globstar
 # check the window size after each command and update values of LINES and COLUMNS
 shopt -s checkwinsize
 
+# make <esc> switch to vi-like editing mode ("normal mode")
+#bind "set editing-mode vi"
+
 
 
 # HISTORY

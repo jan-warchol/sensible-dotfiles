@@ -6,7 +6,7 @@ subset of them that I consider useful for everyone.
 keep their dotfiles in a special folder and symlink them to their `$HOME`.
 [Others](https://github.com/rtomayko/dotfiles)
 turn their whole `$HOME` directory into a git repository.
-I use a hybrid approach that takes the best of both worlds: `$HOME` _is_
+I use a hybrid approach: `$HOME` _is_
 my working directory, but the actual repository data is placed somewhere
 else, and git operations can be accessed only with a special `dotfiles`
 command.
@@ -21,13 +21,11 @@ Clone the repo and run the [installation script]
 It will make a backup of your existing config files before installing new ones
 (unless you run it with `--overwrite` option).
 
-    git clone https://github.com/janek-warchol/dotfiles.git ~/.dotfiles
+    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles
     ~/.dotfiles/.install-dotfiles.sh
 
-Open a new terminal to see the effects.
-
-You will probably want to move some parts of your old configuration into
-the new files.
+You may also want to install some additional software - see
+[`.provision-new-machine.sh`](.provision-new-machine.sh) (requires sudo).
 
 
 
@@ -42,17 +40,20 @@ You can now use `dotfiles` command to manage you repo, just as if you were using
     # Your branch is up-to-date with 'origin/master'.
     # (...)
 
+By default everything except hidden files is ignored by git; see `.gitignore`.
+
 
 
 Features
 --------
 
-- some useful [aliases](.bash-config/aliases.sh) - did you know that `grep`
-  can be made to highlight matches even when piped to `less`?
+- handy [aliases](.bash-config/aliases.sh) - did you know that `grep`
+  can highlight matches even when piped to `less`?
 - [shortcuts](.bash-config/autocompleted-shortcuts.sh) for most common commands
   that work with autocompletion
 - git- and ssh-aware [prompt](.bash-config/prompt.sh) (_very_ convenient)
 - case-insensitive autocompletion and other nice [settings](.bash-config/settings.sh)
+- lots of [git aliases](.gitconfig) and [shortcuts](.bash-config/git-aliases.sh)
 
 Additionally, the "work-tree-separate-from-git-dir" design has the following advantages:
 - the setup is simpler and there are fewer special cases to handle,

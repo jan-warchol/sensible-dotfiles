@@ -17,3 +17,8 @@ alias gwdc,='git diff --color=always --word-diff=color --cached | less -R'
  alias glo,='git log --color=always --decorate --oneline --graph | less -R -S'
  alias glp,='git log --color=always --decorate --patch | less -R -S'
 alias glpw,='git log --color=always --decorate --patch --word-diff=color | less -R -S'
+
+# HEAD should be listed explicitly in case it's detached
+  alias gtk='gitk --branches --tags HEAD &'
+# I don't use --all because I don't want stashes to be shown, they are annoying
+ alias gtkr='gitk --branches --tags --remotes HEAD &'

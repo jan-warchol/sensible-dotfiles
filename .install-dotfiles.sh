@@ -37,4 +37,4 @@ done; sleep 3
 # actual installation
 dotfiles reset --hard --quiet
 echo "$REPO_PATH" > "$HOME/.dotfiles-repo-path"
-echo -e "\n${green}Done.${normal}"
+echo -e "\n${green}Done. Open a new terminal to see the effects.${normal}"

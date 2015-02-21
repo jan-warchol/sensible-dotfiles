@@ -1,11 +1,15 @@
-# This is a gitignore for the dotfiles repository, not a global gitignore.
+# This is a gitignore for the dotfiles repository (not a global gitignore).
 
 # ignore everything except hidden files
 /*
 !/.*
 
+# specific hidden files that should be ignored as well:
+.dotfiles-repo-path
+
+
 # also ignore hidden directories, most of them shouldn't be tracked anyway
 /*/
 
-# ignore user-specific configuration of dotfiles repository itself
-.dotfiles-repo-path
+# but don't ignore the following directories:
+!/.bash-config
