@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Define `dotfiles` command for managing the dotfiles repository.
+
 if [ -f "$HOME/.dotfiles-repo-path" ]; then
     export DOTFILES_REPO=$(cat "$HOME/.dotfiles-repo-path")
     dotfiles() {

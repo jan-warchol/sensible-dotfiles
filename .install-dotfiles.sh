@@ -5,7 +5,7 @@ IFS=$(echo -en "\n\b")
 normal="\e[00m"; bold="\e[1;37m"; green="\e[00;32m"
 
 REPO_PATH=$(dirname $(readlink --canonicalize "$0"))
-echo "Installing dotfiles from $REPO_PATH repository..."
+echo -e "\nInstalling dotfiles from $REPO_PATH."
 
 # make sure we're in correct repository
 cd "$REPO_PATH";
@@ -13,9 +13,11 @@ root_commit=$(git rev-list --max-parents=0 HEAD)
 if [[ $root_commit != 2d33ed8b8a804f7* ]]; then
     echo "This is not a clone of janek-warchol/dotfiles!"; exit
 fi
-# transform into a quasi-bare repository
+
+echo -e "Transforming $REPO_PATH repository..." # into a quasi-bare one
 git ls-tree --name-only HEAD | xargs rm -r
 mv "$REPO_PATH"/.git/* "$REPO_PATH"; rmdir "$REPO_PATH/.git"
+
 
 echo -e "\nThis will install the following files:"
 dotfiles() { git --work-tree="$HOME" --git-dir="$REPO_PATH" "$@"; }
@@ -33,6 +35,7 @@ for f in `dotfiles ls-files`; do
         fi; sleep 0.03
     fi
 done; sleep 3
+
 
 # actual installation
 dotfiles reset --hard --quiet

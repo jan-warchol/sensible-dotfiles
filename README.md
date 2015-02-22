@@ -1,16 +1,6 @@
 Here are my configuration files ("dotfiles"), or rather a specially selected
 subset of them that I consider useful for everyone.
 
-[Some](https://github.com/ryanb/dotfiles)
-[people](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
-keep their dotfiles in a special folder and symlink them to their `$HOME`.
-[Others](https://github.com/rtomayko/dotfiles)
-turn their whole `$HOME` directory into a git repository.
-I use a hybrid approach: `$HOME` _is_
-my working directory, but the actual repository data is placed somewhere
-else, and git operations can be accessed only with a special `dotfiles`
-command.
-
 
 
 Installation
@@ -24,45 +14,59 @@ It will make a backup of your existing config files before installing new ones
     git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles
     ~/.dotfiles/.install-dotfiles.sh
 
-You may also want to install some additional software - see
-[`.provision-new-machine.sh`](.provision-new-machine.sh) (requires sudo).
+You'll probably want to move some parts of your old configuration into
+the new files.  For convenience, all `.sh` files from `.bash-config/` directory
+will be automatically sourced by `.bashrc`.
 
-
-
-Usage
------
-
-You can now use `dotfiles` command to manage you repo, just as if you were using `git`:
-
-    $ dotfiles status
-
-    # On branch master
-    # Your branch is up-to-date with 'origin/master'.
-    # (...)
-
-By default everything except hidden files is ignored by git; see `.gitignore`.
+Note that you have to use `dotfiles` command instead of `git`
+to manage this repo (see [_Structure_](README.md#structure)).
 
 
 
 Features
 --------
 
+- git- and ssh-aware prompt - _very_ convenient!
+  (see [source](.bash-config/prompt.sh))
+- case-insensitive autocompletion and other nice [settings](.bash-config/settings.sh)
 - handy [aliases](.bash-config/aliases.sh) - did you know that `grep`
   can highlight matches even when piped to `less`?
 - [shortcuts](.bash-config/autocompleted-shortcuts.sh) for most common commands
-  that work with autocompletion
-- git- and ssh-aware [prompt](.bash-config/prompt.sh) (_very_ convenient)
-- case-insensitive autocompletion and other nice [settings](.bash-config/settings.sh)
+  (with working autocompletion!)
 - lots of [git aliases](.gitconfig) and [shortcuts](.bash-config/git-aliases.sh)
 
-Additionally, the "work-tree-separate-from-git-dir" design has the following advantages:
-- the setup is simpler and there are fewer special cases to handle,
-- there is no risk that some other program will break the symlinks,
+
+
+Structure
+---------
+
+[Some](https://github.com/ryanb/dotfiles)
+[people](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+keep their dotfiles in a special folder and symlink them to their `$HOME`.
+[Others](https://github.com/rtomayko/dotfiles)
+turn their whole `$HOME` directory into a git repository.
+
+I use a hybrid approach that takes the best of both worlds: `$HOME` _is_
+my working directory, but the actual repository data is _not_ kept in `$HOME/.git` -
+it can be in any directory you want (by default it's in the directory where
+the repo was initially cloned).
+
+Git will recognize that `$HOME` is a repository only if you call it like this:
+
+    git --work-tree=$HOME --git-dir=$HOME/.dotfiles
+
+(that's what the [`dotfiles`](.bash-config/dotfiles.sh) command does).
+
+This design has the following advantages:
+- there are no symlinks that could get broken by some other programs,
 - dotfiles' `.gitignore` doesn't interfere with other repositories,
 - if you accidentally run a git command you won't mess everything up.
 
 Credit for this idea goes to [Kyle Fuller]
 (http://kylefuller.co.uk/posts/organising-dotfiles-in-a-git-repository/).
+
+Note that git is configured to ignore everything except hidden files in this
+repository - see [`.gitignore`](.gitignore) for details.
 
 
 

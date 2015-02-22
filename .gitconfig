@@ -53,7 +53,7 @@
     sh = stash
     shp = stash pop
 
-    s = status --short --branch   # I no longer need verbose info from long status
+    s = status --short   # I no longer need verbose info from long status
     st = status
 
 
@@ -124,6 +124,9 @@
 [merge]
     # in case of merge conflict also show common ancestor version
     conflictstyle = diff3
+
+[push]
+    default = simple
 
 [rebase]
     # automatically process fixup! commits when rebasing interactively
