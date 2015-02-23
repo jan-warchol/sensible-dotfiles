@@ -4,6 +4,9 @@
 # As `git diff` and `git log` produce lots of output, I don't want it to be
 # printed directly in terminal (because I want to see my previous commands),
 # so I pipe them to less (with coloring enabled).
+#
+# Theoretically git uses less as its pager, but it behaves weirdly when the
+# terminal output is scrolled.
 
   alias gd,='git diff --color=always | less -R -S'
  alias gdc,='git diff --color=always --cached | less -R -S'
@@ -18,7 +21,7 @@ alias gwdc,='git diff --color=always --word-diff=color --cached | less -R'
  alias glp,='git log --color=always --decorate --patch | less -R -S'
 alias glpw,='git log --color=always --decorate --patch --word-diff=color | less -R -S'
 
-# HEAD should be listed explicitly in case it's detached
+# HEAD has to be listed explicitly in case it's detached
   alias gtk='gitk --branches --tags HEAD &'
 # I don't use --all because I don't want stashes to be shown, they are annoying
  alias gtkr='gitk --branches --tags --remotes HEAD &'

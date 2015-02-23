@@ -4,9 +4,13 @@
 # useful for provisioning a completely new computer (or a VM).
 #
 # To use with Vagrant, add this to your Vagrantfile:
-# config.vm.provision "shell", privileged: false, path: "https://raw.githubusercontent.com/janek-warchol/dotfiles/master/.provision-new-machine.sh"
+# config.vm.provision "shell", privileged: false, path: "https://raw.githubusercontent.com/janek-warchol/dotfiles/master/.install-utilities.sh"
 
 # TODO: make this OS-agnostic?
+
+set -o xtrace
+set -o nounset
+set -o errexit
 
 # Install latest version of git (packages found in distros' repositories
 # are usually very old, and it really makes a difference in case of git)

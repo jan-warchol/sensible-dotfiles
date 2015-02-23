@@ -40,4 +40,4 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
 export PS1="${usercolor}\u${hostcolor}@\h ${cyan}\w${normal}\$(__git_ps1)\n\\$ "
-export PS4='${bold}>>> ${normal}'
+export PS4="${bold}>>> ${normal}"

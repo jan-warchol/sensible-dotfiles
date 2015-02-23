@@ -6,6 +6,9 @@
 
 # specific hidden files that should be ignored as well:
 .dotfiles-repo-path
+.*history
+.lesshst
+.face
 
 
 # also ignore hidden directories, most of them shouldn't be tracked anyway

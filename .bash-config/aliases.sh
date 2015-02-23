@@ -7,16 +7,16 @@ alias egrep='egrep --color=auto'
 alias rgrep='rgrep --color=auto'
 alias less='less --RAW-CONTROL-CHARS'  # parses color codes!
 
-# more ls aliases
-alias l='ls --file-type --ignore-backups'
-alias la='ls --almost-all --file-type'
-alias ll='ls -l --human-readable --almost-all --file-type'
-alias lld='ll --group-directories-first'
-
 # color-forced grep (will color matches even when piped to less!)
 alias grp='grep --line-number --color=always'
 alias rgp='rgrep --line-number --color=always'
 alias egp='egrep --line-number --color=always'
+
+# common ls aliases
+alias l='ls --file-type --ignore-backups'
+alias la='ls --almost-all --file-type'
+alias ll='ls -l --human-readable --almost-all --file-type'
+alias ld='ll --group-directories-first'
 
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
