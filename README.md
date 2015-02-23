@@ -28,11 +28,14 @@ Features
 
 - git- and ssh-aware prompt - _very_ convenient!
   (see [source](.bash-config/prompt.sh))
-- case-insensitive autocompletion and other nice [settings](.bash-config/settings.sh)
+- [safeguards](.bash-config/safeguards.sh) that can protect you from some
+  common unrecoverable mistakes
 - handy [aliases](.bash-config/aliases.sh) - did you know that `grep`
   can highlight matches even when piped to `less`?
-- [autocompletion](.bash-config/autocompletion.sh) for shell aliases
 - lots of [git aliases](.gitconfig) and [shortcuts](.bash-config/git-aliases.sh)
+- case-insensitive shell autocompletion and other nice
+  [settings](.bash-config/settings.sh)
+- [autocompletion](.bash-config/autocompletion.sh) for shell aliases
 
 
 
