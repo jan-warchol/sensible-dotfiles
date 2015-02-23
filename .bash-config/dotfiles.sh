@@ -19,9 +19,3 @@ else
     echo "       .dotfiles-repo-path config file is missing. This"
     echo "       file should contain the path to dotfiles git-dir."
 fi
-
-# see autocompleted-shortcuts.sh
-complete -o default -o nospace -F _git git dotfiles
-if [ -n "$(type -t _completion_loader)" ]; then
-    _completion_loader git
-fi

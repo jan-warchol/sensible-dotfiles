@@ -31,8 +31,7 @@ Features
 - case-insensitive autocompletion and other nice [settings](.bash-config/settings.sh)
 - handy [aliases](.bash-config/aliases.sh) - did you know that `grep`
   can highlight matches even when piped to `less`?
-- [shortcuts](.bash-config/autocompleted-shortcuts.sh) for most common commands
-  (with working autocompletion!)
+- [autocompletion](.bash-config/autocompletion.sh) for shell aliases
 - lots of [git aliases](.gitconfig) and [shortcuts](.bash-config/git-aliases.sh)
 
 
