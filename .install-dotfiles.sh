@@ -31,7 +31,7 @@ for f in `dotfiles ls-files`; do
             echo -e "Warning: your ${bold}${f}${normal} will be overwritten!"
         else
             echo -e "Renaming your existing ${bold}${f}${normal} to $f.old"
-            mv "./$f" "./$f.old"
+            mv "./$f" "./$f.old" --backup=numbered
         fi; sleep 0.03
     fi
 done; sleep 3
