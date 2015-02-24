@@ -14,6 +14,6 @@ alias c='\cp --backup=numbered'
 
 # You may want to make sure that you won't accidentally use plain rm, mv or cp
 # Bypass these aliases by prepending a slash, e.g. \rm file-without-hope
-alias rm='echo "This is not the command you are looking for."; false'
-alias mv='echo "This is not the command you are looking for."; false'
-alias cp='echo "This is not the command you are looking for."; false'
+#alias rm='echo "This is not the command you are looking for."; false'
+#alias mv='echo "This is not the command you are looking for."; false'
+#alias cp='echo "This is not the command you are looking for."; false'
