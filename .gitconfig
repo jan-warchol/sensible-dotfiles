@@ -73,13 +73,13 @@
         commit_id=$(git rev-parse $1); \
         shift; \
         git commit --fixup $commit_id $@; \
-        if [ ! $(git diff --quiet HEAD) ]; then \
+        if ! git diff --quiet HEAD; then \
             dirtytree=1; \
             echo \"Stashing your other changes...\"; \
             git stash save \"Stashed before amending $commit_id\"; \
         fi; \
         git rebase --interactive --autosquash $commit_id~; \
-        if [ -n dirtytree ]; then \
+        if [ -n \"$dirtytree\" ]; then \
             git stash pop; \
         fi' -"
 
