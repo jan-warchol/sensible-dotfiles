@@ -14,10 +14,12 @@
     bv = branch --verbose --verbose   # also prints SHAs and upstream branches
 
     c = checkout
+    co = checkout   # I prefer 'c', but many people are used to 'co'
     c0 = checkout HEAD~0   # detach HEAD e.g. for throw-away experiments
     cb = checkout -b
 
     k = commit   # no git command starts with 'k', and 'k' matches pronunciation!
+    ci = commit   # I prefer 'k', but many people are used to 'ci'
     ka = commit --all
     km = commit -m
     kma = commit --all -m   # 'kma' instead of 'kam' because it's easier to type
@@ -56,7 +58,7 @@
     sh = stash
     shp = stash pop
 
-    s = status --short   # I no longer need verbose info from long status
+    s = status --short   # I prefer terse output.  See also --branch option.
     st = status
 
 
