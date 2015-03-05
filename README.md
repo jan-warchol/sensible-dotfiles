@@ -11,31 +11,45 @@ Clone the repo and run the [installation script]
 It will make a backup of your existing config files before installing new ones
 (unless you run it with `--overwrite` option).
 
-    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles
-    ~/.dotfiles/.install-dotfiles.sh
+    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles.git
+    ~/.dotfiles.git/.install-dotfiles.sh
 
 You'll probably want to move some parts of your old configuration into
-the new files.  For convenience, all `.sh` files from `.bash-config/` directory
+the new files.  For convenience, all `.sh` files from `.config/bash/` directory
 will be automatically sourced by `.bashrc`.
 
-Note that you have to use `dotfiles` command instead of `git`
-to manage this repo (see [_Structure_](README.md#structure)).
+Note that to manage this repo you have to use `dotfiles` command instead of `git`
+(see [_Structure_](README.md#structure)).
 
 
 
 Features
 --------
 
-- git- and ssh-aware prompt - _very_ convenient!
-  (see [source](.bash-config/prompt.sh))
-- [safeguards](.bash-config/safeguards.sh) that can protect you from some
-  common unrecoverable mistakes
-- handy [aliases](.bash-config/aliases.sh) - did you know that `grep`
-  can highlight matches even when piped to `less`?
-- lots of [git aliases](.gitconfig) and [shortcuts](.bash-config/git-aliases.sh)
-- case-insensitive shell autocompletion and other nice
-  [settings](.bash-config/settings.sh)
-- [autocompletion](.bash-config/autocompletion.sh) for shell aliases
+- git-aware [prompt](.config/bash/prompt.sh) displaying repository status, like this:  
+  `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very_ convenient!
+
+- [safeguards](.config/bash/safeguards.sh) that you can use to protect yourself from
+  some common mistakes (have you ever `rm`'ed wrong file and wanted to get it back?)
+
+- handy [aliases](.config/bash/aliases.sh) - did you know that
+  - `grep` can highlight matches even when piped to `less`?
+  - `ls` can group directories together, listing them before files?
+
+- lots of git [aliases, settings](.config/git/config) and
+  [shorthands](.config/bash/git-aliases.sh) - in particular:
+  - `git trash` command for discarding changes safely,
+  - `git fix` command for amending commits other than the last one,
+  - alias for a more concise version of `git status`,
+  - making diff display file renames correctly,
+  - more informative merge conflict information,
+  - lots of shortcuts to save typing
+
+- cool bash [settings](.config/bash/settings.sh), for example:
+  - case-insensitive autocompletion,
+  - `cd` to a directory just by typing its name
+
+- [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases
 
 
 
@@ -55,14 +69,14 @@ the repo was initially cloned).
 
 Git will recognize that `$HOME` is a repository only if you call it like this:
 
-    git --work-tree=$HOME --git-dir=$HOME/.dotfiles
+    git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git
 
-(that's what the [`dotfiles`](.bash-config/dotfiles.sh) command does).
+(that's what the [`dotfiles`](.config/bash/dotfiles.sh) command does).
 
 This design has the following advantages:
 - there are no symlinks that could get broken by some other programs,
 - dotfiles' `.gitignore` doesn't interfere with other repositories,
-- if you accidentally run a git command you won't mess everything up.
+- if you accidentally run a git command in a wrong dir you won't mess everything up.
 
 Credit for this idea goes to [Kyle Fuller]
 (http://kylefuller.co.uk/posts/organising-dotfiles-in-a-git-repository/).
