@@ -11,7 +11,7 @@
     au = add --update   # stage only tracked files - usually you want this rather than --all
 
     b = branch
-    bv = branch --verbose --verbose   # also prints SHAs and upstream branches
+    bv = branch --verbose --verbose   # lists branches with SHAs and upstreams
 
     c = checkout
     co = checkout   # I prefer 'c', but many people are used to 'co'
@@ -38,7 +38,7 @@
     g5 = grep --color=always --line-number --context 5
     gh5 = grep --color=always --heading --context 5
 
-    l = log --color=always --decorate
+    l = log --color=always --decorate   # force coloring for use with less -R
     lo = log --color=always --decorate --oneline --graph
     lp = log --color=always --decorate --patch
     lpw = log --color=always --decorate --patch --word-diff=color
@@ -122,7 +122,7 @@
     quotepath = false
 
 [diff]
-    # detect copied stuff and display it appropriately
+    # detect renamed files and output only actual differences between versions
     renames = copies
 
 [help]
