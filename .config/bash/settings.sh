@@ -10,12 +10,6 @@ bind "set completion-ignore-case on"
 # cd to a dir just by typing its name (requires bash > 4.0)
 shopt -s autocd
 
-# make "**" match all files in all levels of subdirectories
-shopt -s globstar
-
-# check the window size after each command and update values of LINES and COLUMNS
-shopt -s checkwinsize
-
 # make <esc> switch to vi-like command mode
 #bind "set editing-mode vi"
 

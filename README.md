@@ -1,5 +1,7 @@
-Here are my configuration files ("dotfiles"), or rather a specially selected
-subset of them that I consider useful for everyone.
+This is a selection of most useful command-line customizations (mainly bash
+and git configuration).  Specifically, `master` branch contains only stuff
+that I believe is really worth having - if you're interested in my full
+configuration, check out branch `janek`.
 
 
 
@@ -40,9 +42,10 @@ Features
   - alias for a more concise version of `git status`,
   - making diff display file renames correctly,
   - more informative merge conflict information,
-  - lots of shortcuts to save typing.
-- case-insensitive shell autocompletion and other nice
-  [settings](.config/bash/settings.sh)
+  - lots of shortcuts to save typing
+- cool bash [settings](.config/bash/settings.sh), for example:
+  - case-insensitive autocompletion,
+  - `cd` to a directory just by typing its name
 - [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases
 
 
