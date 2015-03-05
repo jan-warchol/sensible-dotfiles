@@ -28,7 +28,7 @@ cd ..
 trash-put trash-cli
 
 # Install the dotfiles if they're not yet present
-if [ ! -f "$HOME/.dotfiles-repo-path" ]; then
-    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles
-    ~/.dotfiles/.install-dotfiles.sh
+if [ ! -f "$HOME/.config/dotfiles-git-dir" ]; then
+    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles.git
+    ~/.dotfiles.git/.install-dotfiles.sh
 fi

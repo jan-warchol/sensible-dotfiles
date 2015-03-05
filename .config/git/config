@@ -1,3 +1,6 @@
+# Note that old versions of git may not load configuration from ~/.config/git/config,
+# loading only ~/.gitconfig.  I _strongly_ recommend installing latest git (>= 2.0)!
+
 [alias]
 
     # SIMPLE "SHORTCUT" ALIASES
@@ -138,7 +141,3 @@
 [rerere]
     # Reuse recorded resolution of conflicted merges, see 'git help rerere'
     enabled = true
-
-[include]
-    # I keep git user name and email in a separate file
-    path = .gituser
