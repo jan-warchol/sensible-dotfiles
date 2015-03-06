@@ -17,9 +17,6 @@ alias ld='ll --group-directories-first'
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
 alias v='vim'
-alias u='cd ..'
-alias uu='cd ../..'
-alias uuu='cd ../../..'
 alias L='less'  # typing |L is very convenient, especially using left shift
 
 # Show a notification when a command finishes - use like this:  sleep 10; alert
