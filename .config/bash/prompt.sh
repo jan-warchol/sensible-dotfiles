@@ -21,12 +21,15 @@ boldblue="\[\e[1;34m\]"
 boldviolet="\[\e[1;35m\]"
 boldcyan="\[\e[1;36m\]"
 
-# Use different coloring when I'm logged in via ssh.
+# When I'm logged in via ssh, display the path in scp-like format (-> easy
+# selecting with a double click) and highlight hostname with a different color.
 usercolor=${violet}
 if [ -z "$SSH_CONNECTION" ]; then
     hostcolor=${usercolor}
+    separator=" "
 else
     hostcolor=${blue}
+    separator=":"
 fi
 
 # $(__git_ps1) displays git repository status in the prompt.
@@ -39,5 +42,5 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
-export PS1="${usercolor}\u${hostcolor}@\h ${cyan}\w${normal}\$(__git_ps1)\n\\$ "
+export PS1="${usercolor}\u${hostcolor}@\h${separator}${cyan}\w${normal}\$(__git_ps1)\n\\$ "
 export PS4="${bold}>>> ${normal}"
