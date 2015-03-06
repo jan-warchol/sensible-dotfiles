@@ -15,7 +15,9 @@ if [[ $root_commit != 2d33ed8b8a804f7* ]]; then
 fi
 
 echo -e "Transforming $REPO_PATH repository..." # into a quasi-bare one
-git ls-tree --name-only HEAD | xargs rm -r
+git ls-files | xargs rm
+git ls-files | xargs --max-args=1 dirname | uniq | grep -v "^\.$" | \
+xargs rmdir --parents --ignore-fail-on-non-empty
 mv "$REPO_PATH"/.git/* "$REPO_PATH"; rmdir "$REPO_PATH/.git"
 
 
@@ -39,5 +41,5 @@ done; sleep 3
 
 # actual installation
 dotfiles reset --hard --quiet
-echo "$REPO_PATH" > "$HOME/.dotfiles-repo-path"
+echo "$REPO_PATH" > "$HOME/.config/dotfiles-git-dir"
 echo -e "\n${green}Done. Open a new terminal to see the effects.${normal}"
