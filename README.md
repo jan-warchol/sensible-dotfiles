@@ -1,5 +1,7 @@
-Here are my configuration files ("dotfiles"), or rather a specially selected
-subset of them that I consider useful for everyone.
+This is a selection of most useful command-line customizations (mainly bash
+and git configuration).  Specifically, `master` branch contains only stuff
+that I believe is really worth having - if you're interested in my full
+configuration, check out branch `janek`.
 
 
 
