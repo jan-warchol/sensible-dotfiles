@@ -14,8 +14,10 @@
     c = checkout
     co = checkout   # I prefer 'c', but many people are used to 'co'
 
-    k = commit   # no git command starts with 'k', and 'k' matches pronunciation!
-    ci = commit   # I prefer 'k', but many people are used to 'ci'
+    # --verbose flag shows a preview of changes that will be committed when editing
+    # commit message - I no longer have to double-check with 'git diff' before committing!
+    k = commit --verbose   # no git command starts with 'k', and 'k' matches pronunciation!
+    ci = commit --verbose   # I prefer 'k', but many people are used to 'ci'
     kma = commit --all -m   # 'kma' instead of 'kam' because it's easier to type
 
     d = diff --color=always   # force coloring for use with less -R
