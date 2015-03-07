@@ -114,11 +114,11 @@
     ui = auto
 
 [core]
-    # display non-ASCII characters (e.g. Polish) instead of quoting them:
+    # display non-ASCII characters (e.g. Polish) instead of quoting them
     quotepath = false
 
 [diff]
-    # detect renamed files and output only actual differences between versions
+    # detect renamed files and show only actual differences between versions
     renames = copies
 
 [merge]
@@ -129,5 +129,5 @@
     default = simple
 
 [rebase]
-    # automatically process fixup! commits when rebasing interactively
+    # automatically process "fixup!" commits when rebasing interactively
     autosquash = true

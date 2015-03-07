@@ -36,7 +36,7 @@ Features
 
 - handy [aliases](.config/bash/aliases.sh) - did you know that
   - `grep` can highlight matches even when piped to `less`?
-  - `ls` can group directories together, listing them before files?
+  - `ls` can group directories together, listing them above files?
 
 - lots of git [aliases, settings](.config/git/config) and
   [shorthands](.config/bash/git-aliases.sh) - in particular:

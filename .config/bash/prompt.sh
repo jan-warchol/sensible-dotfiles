@@ -32,11 +32,9 @@ else
     separator=":"
 fi
 
-# $(__git_ps1) displays git repository status in the prompt.
-# This is the single best customization that I had ever made to my shell,
-# period.  It's extremely convenient, saved me lots of time and actually
-# prevented some serious mistakes - I LOVE IT!!  See the documentation at
-# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+# $(__git_ps1) displays git repository status in the prompt.  This is the
+# single best customization that I had ever made to my shell, period.
+# See https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
