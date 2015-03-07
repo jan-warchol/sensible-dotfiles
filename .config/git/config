@@ -40,6 +40,31 @@
 
 
 
+    # PRETTY LOGS
+    #
+    # When you're over ssh and cannot run gitk, or you don't want to switch context.
+    # The names are mnemonics based on common aliases of 'ls' command.
+    # based on http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+
+    # basic one-line log, I use it all the time
+    ls = log --color=always --decorate --graph --date=relative \
+    --format=tformat:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(dim white)- %an, %ad%C(reset)'
+
+    # as above, but shows all local and remote branches
+    la = !"git ls --branches --remotes"
+
+    # "Long" format - full commit message and summary of changes
+    ll = log --color=always --decorate --graph --stat-graph-width=30 --stat-count=20 --date-order
+
+    # two-line version, useful when your terminal window is narrow
+    l2 = log --color=always --decorate --graph --date=iso --date-order \
+    --format=tformat:'%C(auto)%h%C(reset) %s%n        %C(blue)%an%C(reset)%C(dim white), %ad%C(reset)%C(auto)%d%C(reset)'
+
+    # and a two-line log showing all branches
+    l2a = !"git l2 --branches --remotes"
+
+
+
     # MORE SOPHISTICATED ALIASES
 
     # "smart amend"

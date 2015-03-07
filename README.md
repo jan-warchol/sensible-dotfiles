@@ -42,6 +42,7 @@ Features
   [shorthands](.config/bash/git-aliases.sh) - in particular:
   - `git trash` command for discarding changes safely,
   - `git fix` command for amending commits other than the last one,
+  - pretty logs,
   - alias for a more concise version of `git status`,
   - making diff display file renames correctly,
   - more informative merge conflict information,
