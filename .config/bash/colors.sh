@@ -1,0 +1,17 @@
+resetcolor="\e[00m"
+
+red="\e[00;31m"
+green="\e[00;32m"
+yellow="\e[00;33m"
+blue="\e[00;34m"
+violet="\e[00;35m"
+cyan="\e[00;36m"
+white="\e[00;37m"
+
+boldred="\e[1;31m"
+boldgreen="\e[1;32m"
+boldyellow="\e[1;33m"
+boldblue="\e[1;34m"
+boldviolet="\e[1;35m"
+boldcyan="\e[1;36m"
+boldwhite="\e[1;37m"
