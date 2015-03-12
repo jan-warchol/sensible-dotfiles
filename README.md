@@ -43,8 +43,7 @@ Features
   - `git trash` command for discarding changes safely,
   - `git fix` command for amending commits other than the last one,
   - pretty logs,
-  - alias for a more concise version of `git status`,
-  - making diff display file renames correctly,
+  - make `git diff` display file renames correctly,
   - more informative merge conflict information,
   - lots of shortcuts to save typing
 
@@ -52,7 +51,7 @@ Features
   - case-insensitive autocompletion,
   - `cd` to a directory just by typing its name
 
-- [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases
+- [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases.
 
 
 
@@ -72,7 +71,7 @@ the repo was initially cloned).
 
 Git will recognize that `$HOME` is a repository only if you call it like this:
 
-    git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git
+    git --work-tree="$HOME" --git-dir="$HOME/.dotfiles.git"
 
 (that's what the [`dotfiles`](.config/bash/dotfiles.sh) command does).
 

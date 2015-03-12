@@ -14,7 +14,7 @@
     c = checkout
     co = checkout   # I prefer 'c', but many people are used to 'co'
 
-    # --verbose flag shows a preview of changes that will be committed when editing
+    # --verbose flag shows a preview of changes that will be committed when editing the
     # commit message - I no longer have to double-check with 'git diff' before committing!
     k = commit --verbose   # no git command starts with 'k', and 'k' matches pronunciation!
     ci = commit --verbose   # I prefer 'k', but many people are used to 'ci'
@@ -41,7 +41,7 @@
 
 
     # PRETTY LOGS
-    #
+
     # When you're over ssh and cannot run gitk, or you don't want to switch context.
     # The names are mnemonics based on common aliases of 'ls' command.
     # based on http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
