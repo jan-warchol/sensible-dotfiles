@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Some shell commands are dangerous - rm deletes files permamently, cp and mv
 # silently overwrite destination files if they exist. To protect myself from
 # my own mistakes I define "safe" versions of such commands.

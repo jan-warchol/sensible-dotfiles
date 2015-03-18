@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Aliases such as 'g' for 'git' wouldn't be very useful if they didn't
 # have autocompletion.  Doing this is a bit tricky and I'm not sure
 # I did it 100% right, but it seems to work.

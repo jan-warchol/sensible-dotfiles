@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # I usually want to see the output of my previous commands again after
 # I'm done viewing `git diff` or `git log`, so I pipe them to less (with
 # coloring enabled) - when I exit less, their output will be cleared.

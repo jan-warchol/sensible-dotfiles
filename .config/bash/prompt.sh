@@ -1,5 +1,3 @@
-#!/bin/bash
-
 . "$HOME/.config/bash/colors.sh"
 
 # Colored prompt stands out in the sea of text, which makes it _much_ easier
