@@ -1,7 +1,7 @@
-This is a selection of most useful command-line customizations (mainly bash
-and git configuration).  Specifically, `master` branch contains only stuff
-that I believe is really worth having - if you're interested in my full
-configuration, check out branch `janek`.
+Configuration files for bash, git etc. `master` branch contains a carefully
+selected, minimal setup that I believe will be useful for everyone.  If you're
+interested in my full configuration, check out branch
+[`janek`](https://github.com/janek-warchol/dotfiles/tree/janek).
 
 
 
@@ -31,12 +31,12 @@ Features
 - git-aware [prompt](.config/bash/prompt.sh) displaying repository status, like this:  
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very_ convenient!
 
-- [safeguards](.config/bash/safeguards.sh) that you can use to protect yourself from
-  some common mistakes (have you ever `rm`'ed wrong file and wanted to get it back?)
-
 - handy [aliases](.config/bash/aliases.sh) - did you know that
   - `grep` can highlight matches even when piped to `less`?
   - `ls` can group directories together, listing them above files?
+
+- [safeguards](.config/bash/safeguards.sh) that you can use to protect yourself from
+  some common mistakes (have you ever `rm`'ed wrong file and wanted to get it back?)
 
 - lots of git [aliases, settings](.config/git/config) and
   [shorthands](.config/bash/git-aliases.sh) - in particular:
