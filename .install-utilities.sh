@@ -21,6 +21,12 @@ sudo apt-get --yes install trash-cli
 
 # Install the dotfiles if they're not yet present
 if [ ! -f "$HOME/.config/dotfiles-git-dir" ]; then
-    git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles.git
-    ~/.dotfiles.git/.install-dotfiles.sh
+    PARENT_DIR=$(dirname $(readlink --canonicalize "$0"))
+    if [ -f "$PARENT_DIR"/.install-dotfiles.sh ]; then
+        # apparently dotfiles repo is already cloned
+        "$PARENT_DIR"/.install-dotfiles.sh
+    else
+        git clone https://github.com/janek-warchol/dotfiles ~/.dotfiles.git
+        ~/.dotfiles.git/.install-dotfiles.sh
+    fi
 fi
