@@ -8,9 +8,6 @@ bind "set completion-ignore-case on"
 # cd to a dir just by typing its name (requires bash > 4.0)
 shopt -s autocd
 
-# make <esc> switch to vi-like command mode
-#bind "set editing-mode vi"
-
 
 
 # HISTORY

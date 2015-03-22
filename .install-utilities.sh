@@ -6,8 +6,6 @@
 # To use with Vagrant, add this to your Vagrantfile:
 # config.vm.provision "shell", privileged: false, path: "https://raw.githubusercontent.com/janek-warchol/dotfiles/master/.install-utilities.sh"
 
-# TODO: make this OS-agnostic?
-
 set -o errexit
 
 # Install latest version of git (packages found in distros' repositories
