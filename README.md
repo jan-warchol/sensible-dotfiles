@@ -28,24 +28,24 @@ Note that to manage this repo you have to use `dotfiles` command instead of `git
 Features
 --------
 
-- git-aware [prompt](.config/bash/prompt.sh) displaying repository status, like this:  
+- **git-aware [bash prompt](.config/bash/prompt.sh)** displaying repository status, like this:  
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very_ convenient!
 
-- handy [aliases](.config/bash/aliases.sh) - did you know that
+- lots of git [aliases, settings](.config/git/config) and
+  [shorthands](.config/bash/git-aliases.sh) - in particular:
+  - `git trash` command for discarding changes safely,
+  - informative and **pretty
+    [logs](https://github.com/janek-warchol/dotfiles/blob/master/.config/git/config#L44)**,
+  - more information in case of merge conflicts,
+  - `git diff` that displays file renames correctly,
+  - `git fix` command for amending commits other than the last one
+
+- handy [shell aliases](.config/bash/aliases.sh) - did you know that
   - `grep` can highlight matches even when piped to `less`?
   - `ls` can group directories together, listing them above files?
 
 - [safeguards](.config/bash/safeguards.sh) that you can use to protect yourself from
   some common mistakes (have you ever `rm`'ed wrong file and wanted to get it back?)
-
-- lots of git [aliases, settings](.config/git/config) and
-  [shorthands](.config/bash/git-aliases.sh) - in particular:
-  - `git trash` command for discarding changes safely,
-  - `git fix` command for amending commits other than the last one,
-  - pretty logs,
-  - make `git diff` display file renames correctly,
-  - more informative merge conflict information,
-  - lots of shortcuts to save typing
 
 - cool bash [settings](.config/bash/settings.sh), for example:
   - case-insensitive autocompletion,
