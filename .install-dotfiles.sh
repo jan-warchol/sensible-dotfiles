@@ -16,7 +16,7 @@ fi
 
 echo -e "Transforming $REPO_PATH repository..." # into a quasi-bare one
 git ls-files | xargs rm
-git ls-files | xargs --max-args=1 dirname | uniq | grep -v "^\.$" | \
+git ls-files | xargs --max-args=1 dirname | sort -u | grep -v "^\.$" | \
 xargs rmdir --parents --ignore-fail-on-non-empty || true
 mv "$REPO_PATH"/.git/* "$REPO_PATH"; rmdir "$REPO_PATH/.git"
 
