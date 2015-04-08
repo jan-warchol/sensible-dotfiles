@@ -8,8 +8,7 @@ interested in my full configuration, check out branch
 Installation
 ------------
 
-Clone the repo and run the [installation script]
-(https://github.com/janek-warchol/dotfiles/blob/master/.install-dotfiles.sh).
+Clone the repo and run the [installation script](.install-dotfiles.sh).
 It will make a backup of your existing config files before installing new ones
 (unless you run it with `--overwrite` option).
 
@@ -34,8 +33,7 @@ Features
 - lots of git [aliases, settings](.config/git/config) and
   [shorthands](.config/bash/git-aliases.sh) - in particular:
   - `git trash` command for discarding changes safely,
-  - informative and **pretty
-    [logs](https://github.com/janek-warchol/dotfiles/blob/master/.config/git/config#L44)**,
+  - informative and **pretty [logs](.config/git/config#L44)**,
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly,
   - `git fix` command for amending commits other than the last one
@@ -73,7 +71,7 @@ Git will recognize that `$HOME` is a repository only if you call it like this:
 
     git --work-tree="$HOME" --git-dir="$HOME/.dotfiles.git"
 
-(that's what the [`dotfiles`](.config/bash/dotfiles.sh) command does).
+(that's what the [`dotfiles`](.bashrc#L4) command does).
 
 This design has the following advantages:
 - there are no symlinks that could get broken by some other programs,
