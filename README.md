@@ -35,8 +35,7 @@ Features
   - `git trash` command for discarding changes safely,
   - informative and **pretty [logs](.config/git/config#L44)**,
   - more information in case of merge conflicts,
-  - `git diff` that displays file renames correctly,
-  - `git fix` command for amending commits other than the last one
+  - `git diff` that displays file renames correctly
 
 - handy [shell aliases](.config/bash/aliases.sh) - did you know that
   - `grep` can highlight matches even when piped to `less`?

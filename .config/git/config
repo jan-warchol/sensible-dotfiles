@@ -64,29 +64,6 @@
 
     # MORE SOPHISTICATED ALIASES
 
-    # "smart amend"
-    #
-    # Fixup a specified commit and use rebase to merge the fixup (like commit --amend,
-    # but for commits before the currently checked-out one - see the description of
-    # --fixup option in `git commit` manpage).  By default the fixup will incorporate
-    # staged changes, but you can also use `-a` option (or specify paths), like with
-    # `git commit` itself.
-    # Don't use this if there was a merge after the commit to be amended.
-    #
-    fix = "!sh -c 'set -e; \
-        commit_id=$(git rev-parse $1); \
-        shift; \
-        git commit --fixup $commit_id $@; \
-        if ! git diff --quiet HEAD; then \
-            dirtytree=1; \
-            echo \"Stashing your other changes...\"; \
-            git stash save \"Stashed before amending $commit_id\"; \
-        fi; \
-        git rebase --interactive --autosquash $commit_id~; \
-        if [ -n \"$dirtytree\" ]; then \
-            git stash pop; \
-        fi' -"
-
     # trash - discard changes
     #
     # Use this command instead of `reset --hard`, as it makes it possible to undo
