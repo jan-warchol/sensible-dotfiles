@@ -95,7 +95,5 @@ repository - see [`.gitignore`](.gitignore) for details.
 License
 -------
 
-Most of this stuff was written by me, but some parts were derived or copied
-from others' work.  I grant everyone permission to use, modify, distribute
-etc. the parts written by me, and I'll try to include proper attribution for
-the parts authored by others.
+I release this work into public domain.  Attribution will be very welcome,
+but it's not strictly required.  Enjoy!
