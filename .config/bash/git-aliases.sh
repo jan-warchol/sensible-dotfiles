@@ -1,10 +1,9 @@
-# I usually want to see the output of my previous commands again after
-# I'm done viewing `git diff` or `git log`, so I pipe them to less (with
-# coloring enabled) - when I exit less, their output will be cleared.
+# I usually pipe the output of `git diff` and `git log` to less so that when
+# I'm done viewing them, I will see the output of my previous commands again.
 
 gd() { git d "$@" | less --RAW-CONTROL-CHARS --chop-long-lines; }
 # word-diff is especially useful for files with very long lines of text
-# (e.g. a paragraph per line) - in that case we want less to wrap lines
+# (e.g. a paragraph per line) - in that case we actually want wrapped lines
 gwd() { git wd "$@" | less --RAW-CONTROL-CHARS; }
 
 gls() { git ls "$@" | less --RAW-CONTROL-CHARS --chop-long-lines; }

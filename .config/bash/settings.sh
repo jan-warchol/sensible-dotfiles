@@ -9,19 +9,11 @@ bind "set completion-ignore-case on"
 shopt -s autocd
 shopt -s cdspell
 
-
-
-# HISTORY
-
-# save LOTS of history
-export HISTFILESIZE=10000000
-export HISTSIZE=10000000
-
-# don't store duplicated commands in history
-export HISTCONTROL=ignoredups
-
-# append to the history file, don't overwrite it
-shopt -s histappend
+# shell history is very useful, so let's make sure we can harness its full power
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTCONTROL=ignoredups   # don't store duplicated commands
+shopt -s histappend   # don't overwrite history file after each session
 
 # disable terminal flow control key binding, so that ^S will search history forward
 stty -ixon

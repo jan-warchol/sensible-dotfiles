@@ -33,7 +33,7 @@ Features
 - lots of git [aliases, settings](.config/git/config) and
   [shorthands](.config/bash/git-aliases.sh) - in particular:
   - `git trash` command for discarding changes safely,
-  - informative and **pretty [logs](.config/git/config#L44)**,
+  - informative and **pretty [logs](.config/git/config#L50)**,
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly
 
