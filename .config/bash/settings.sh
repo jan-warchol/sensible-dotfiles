@@ -5,8 +5,9 @@ fi
 # make autocompletion case-insensitive
 bind "set completion-ignore-case on"
 
-# cd to a dir just by typing its name (requires bash > 4.0)
+# cd to a dir just by typing its name (requires bash > 4.0), autocorrect typos
 shopt -s autocd
+shopt -s cdspell
 
 
 

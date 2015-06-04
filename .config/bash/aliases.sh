@@ -17,9 +17,12 @@ alias g='git'
 alias v='vim'
 alias L='less'  # typing |L is very convenient, especially using left shift
 
-# Show a notification when a command finishes - use like this:  sleep 10; alert
-# Taken from Ubuntu's default .bashrc.
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# Show a notification when a command finishes. Use like this:   sleep 5; alert
+alert() {
+    if [ $? = 0 ]; then icon=terminal; else icon=error; fi
+    last_cmd="$(history | tail -n1 | sed 's/^\s*[0-9]*\s*//' | sed 's/;\s*alert\s*$//')"
+    notify-send -i $icon "$last_cmd"
+}
 
 # let aliases work after sudo (see http://askubuntu.com/a/22043)
 alias sudo='sudo '
