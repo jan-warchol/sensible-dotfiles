@@ -12,6 +12,7 @@
     au = add --update   # stage all changes in already tracked files
 
     b = branch
+    br = branch
     bv = branch --verbose --verbose   # lists branches with SHAs and upstreams
 
     c = checkout
@@ -21,7 +22,6 @@
     # message - you no longer have to run 'git diff' before every commit :)
     k = commit --verbose
     ci = commit --verbose
-    kma = commit --all -m   # 'kma' instead of 'kam' because it's easier to type
 
     d = diff --color=always
     wd = diff --color=always --word-diff=color   # mnemonic: Word-Diff
