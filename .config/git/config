@@ -32,6 +32,9 @@
     # always run log with --graph so that the topology will be visualized!
     l = log --color=always --decorate --graph
 
+    # unlike plain `pull`, this won't attempt a merge that may result in conflicts
+    pl = pull --ff-only
+
     rb = rebase
     rbo = rebase --onto   # quite useful, see examples in 'git help rebase'
     rbi = rebase --interactive
