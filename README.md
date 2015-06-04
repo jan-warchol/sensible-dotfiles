@@ -1,7 +1,14 @@
-Configuration files for bash, git etc. `master` branch contains a carefully
-selected, minimal setup that I believe will be useful for everyone.  If you're
-interested in my full configuration, check out branch
-[`janek`](https://github.com/janek-warchol/dotfiles/tree/janek).
+This repository aims to be a collection of most common and most useful settings
+for command line tools - sort of "defaults that should be there in the first
+place".  It should be a good starting point for people new to the command line,
+but I expect that experienced users will also find interesting things here.
+
+To avoid bloat, I'm setting the following restriction: all files combined must
+have less than 900 lines in total (preferably less than 600), including comments
+and this README itself.
+
+If you're interested in my personal configuration (based on this one), check out
+[`this repo`](https://github.com/janek-warchol/my-dotfiles/tree/janek).
 
 
 
@@ -46,7 +53,7 @@ Features
 
 - cool bash [settings](.config/bash/settings.sh), for example:
   - case-insensitive autocompletion,
-  - `cd` to a directory just by typing its name
+  - `cd` to a directory just by typing its name, autocorrect typos
 
 - [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases.
 
