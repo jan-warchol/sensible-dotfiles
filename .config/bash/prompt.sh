@@ -19,16 +19,15 @@ RESETALL="\e[0m"
 
 # Using \[ and \] around color codes in prompt is necessary to prevent strange issues!
 pathcolor="\[${CYAN}\]"
-usercolor="\[${MAGENTA}\]"
 resetall="\[${RESETALL}\]"
 
 # When I'm logged in via ssh, display the path in scp-like format (-> easy
-# selecting with a double click) and highlight hostname with a different color.
+# selecting with a double click) and display username in a different color.
 if [ -n "$SSH_CONNECTION" ]; then
-    hostcolor="\[${BLUE}\]"
+    usercolor="\[${MAGENTA}\]"
     separator=":"
 else
-    hostcolor=${usercolor}
+    usercolor="\[${BLUE}\]"
     separator=" "
 fi
 
@@ -39,4 +38,4 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
-export PS1="${usercolor}\u${hostcolor}@\h${separator}${pathcolor}\w${resetall}\$(__git_ps1)\n\\$ "
+export PS1="${usercolor}\u@\h${pathcolor}${separator}\w${resetall}\$(__git_ps1)\n\\$ "
