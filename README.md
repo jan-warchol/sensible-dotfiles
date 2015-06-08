@@ -1,14 +1,17 @@
-This repository aims to be a collection of most common and most useful settings
-for command line tools - sort of "defaults that should be there in the first
-place".  It should be a good starting point for people new to the command line,
-but I expect that experienced users will also find interesting things here.
+This is a collection of most useful and common settings for command line tools -
+sort of "defaults that should have been there in the first place".
 
-To avoid bloat, I'm setting the following restriction: all files combined must
-have less than 900 lines in total (preferably less than 600), including comments
-and this README itself.
+* if you haven't tried customizing your command line before, this should be
+  a good starting point
 
-If you're interested in my personal configuration (based on this one), check out
-[`this repo`](https://github.com/janek-warchol/my-dotfiles/tree/janek).
+* if you are managing a Linux server that other people access as well, you can
+  install this rather than confuse everyone else with your personal dotfiles
+
+To avoid bloat, I'm going to keep this repository under 600 lines of code total
+(including comments and this README itself).
+
+If you're interested in my personal configuration (forked from this repo), look
+[here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
 
 
 
