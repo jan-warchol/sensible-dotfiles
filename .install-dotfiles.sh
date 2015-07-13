@@ -4,7 +4,7 @@ set -e
 IFS=$(echo -en "\n\b")
 normal="\e[00m"; bold="\e[1;37m"; green="\e[00;32m"
 
-REPO_PATH=$(dirname $(readlink --canonicalize "$0"))
+REPO_PATH=$(cd "$(dirname "$0")"; pwd)
 echo -e "\nInstalling dotfiles from $REPO_PATH."
 
 # make sure we're in correct repository
