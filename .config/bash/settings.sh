@@ -17,3 +17,6 @@ shopt -s histappend   # don't overwrite history file after each session
 
 # disable useless flow control binding, allowing Ctrl-S to search history forward
 stty -ixon
+
+# let Ctrl-O open ranger, a console file manager (http://nongnu.org/ranger/)
+bind '"\C-o":"ranger\C-m"'
