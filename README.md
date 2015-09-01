@@ -49,14 +49,9 @@ Features
   - `grep` can highlight matches even when piped to `less`?
   - `ls` can group directories together, listing them above files?
 
-- [safeguards](.config/bash/safeguards.sh) that you can use to protect yourself from
-  some common mistakes (have you ever `rm`'ed wrong file and wanted to get it back?)
-
 - cool bash [settings](.config/bash/settings.sh), for example:
   - case-insensitive autocompletion,
   - `cd` to a directory just by typing its name, autocorrect typos
-
-- [autocompletion](.config/bash/autocompletion.sh) for some of the shell aliases.
 
 
 

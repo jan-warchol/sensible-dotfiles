@@ -27,3 +27,8 @@ alert() {
 
 # let aliases work after sudo (see http://askubuntu.com/a/22043)
 alias sudo='sudo '
+
+# Instead of rm, which deletes files permanently, I prefer to use trash-cli
+# (github.com/andreafrancia/trash-cli) which moves files to system trash.
+alias tp='trash-put'
+#alias rm='echo "This is not the footgun you are looking for."; false'
