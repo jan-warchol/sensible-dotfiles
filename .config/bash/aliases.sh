@@ -3,7 +3,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias less='less --RAW-CONTROL-CHARS'  # parses color codes!
 
-# color-forced grep (will color matches even when piped to less!)
+# this will color matches even when output to a non-tty (e.g. piped to less)
 alias grp='grep --line-number --color=always'
 
 # common ls aliases
@@ -15,9 +15,10 @@ alias ld='ll --group-directories-first'
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
 alias v='vim'
-alias L='less'  # typing |L is very convenient, especially using left shift
+alias L='less'  # typing |L is convenient, especially using left shift
 
-# Show a notification when a command finishes. Use like this:   sleep 5; alert
+# Show a desktop notification when a command finishes. Use like this:
+#   sleep 5; alert
 alert() {
     if [ $? = 0 ]; then icon=terminal; else icon=error; fi
     last_cmd="$(history | tail -n1 | sed 's/^\s*[0-9]*\s*//' | sed 's/;\s*alert\s*$//')"

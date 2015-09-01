@@ -15,5 +15,5 @@ export HISTSIZE=1000000
 export HISTCONTROL=ignoredups   # don't store duplicated commands
 shopt -s histappend   # don't overwrite history file after each session
 
-# disable terminal flow control key binding, so that ^S will search history forward
+# disable useless flow control binding, allowing Ctrl-S to search history forward
 stty -ixon
