@@ -27,7 +27,7 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
-GIT_PS1_SHOWCOLORHINTS="false"
+#GIT_PS1_SHOWCOLORHINTS="true"
 
 # Use PROMPT_COMMAND instead of PS1 because it supports more features of __git_ps1.
 # The syntax used here is "__git_ps1 <prefix> <suffix>", see link above.
