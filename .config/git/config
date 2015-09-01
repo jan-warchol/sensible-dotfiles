@@ -67,28 +67,6 @@
 
 
 
-    # MORE SOPHISTICATED COMMANDS
-
-    # trash - discard changes
-    #
-    # Use this command instead of `reset --hard`, as it makes it possible to undo
-    # the trashing.  Right now this is implemented simply by using `stash` command,
-    # so to bring back discarded changes you just do `git stash pop <stash>`.
-    #
-    # Useful options:
-    #     -p    select which hunks to discard
-    #     -u    also remove untracked files
-    #     -a    also remove untracked and ignored files
-    #
-    # TODO:
-    # - add support for trashing changes in indvidual files
-    # - rewrite this as a standalone git command
-    # - send a patch upstream?
-    #
-    trash = !sh -c 'git stash save "$@" "changes trashed on $(date +\"%Y-%m-%d %H:%M\")"' -
-
-
-
 [color]
     ui = auto
 
