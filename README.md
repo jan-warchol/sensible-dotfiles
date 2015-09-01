@@ -32,6 +32,14 @@ will be automatically sourced by `.bashrc`.
 Note that to manage this repo you have to use `dotfiles` command instead of `git`
 (see [_Structure_](README.md#structure)).
 
+There are two additional programs worth installing:
+- [`ranger`](http://nongnu.org/ranger/): a console file manager.
+  Believe me, it's **much** better than typing `cd` and `ls` all the time.
+- [`trash-cli`](https://github.com/andreafrancia/trash-cli): command-line interface
+  to system trash.  Have you ever rm'ed wrong file and wanted to get it back?
+
+Both are available from apt repositories: `sudo apt-get install ranger trash-cli`.
+
 
 
 Features
