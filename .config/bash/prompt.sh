@@ -1,6 +1,8 @@
 # Colored prompt stands out in the sea of text, which makes it _much_ easier
 # to navigate through the terminal output.  Note that I'm using bright versions
-# of colors, because in many color palettes the normal ones are too dim.
+# of colors, because in many color palettes the normal ones are too dim -
+# depending on your palette, you may want to use \e[34m, \e[35m and \e[36m
+# instead, or use green (\e[32m / \e[92m) for username.
 BR_BLUE="\e[94m"
 BR_MAGENTA="\e[95m"
 BR_CYAN="\e[96m"
