@@ -8,6 +8,9 @@
 /.config/*
 !/.config/bash
 !/.config/git
+!/.ssh/
+/.ssh/*
+!/.ssh/config
 
 # and a selection of hidden configuration files.
 !/.*rc
