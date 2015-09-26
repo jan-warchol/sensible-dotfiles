@@ -68,7 +68,16 @@ shopt -s histappend   # don't overwrite history file after each session
 # disable useless flow control binding, allowing Ctrl-S to search history forward
 stty -ixon
 
-# let Ctrl-O open ranger, a console file manager (http://nongnu.org/ranger/)
+# ranger is a vim-style console file manager (http://nongnu.org/ranger/).
+# This lets bash automatically change current directory to the last one visited
+# inside ranger.  (Use "cd -" if you want to return to the original directory.)
+function ranger {
+    tempfile="$(mktemp)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" && cd -- "$(cat "$tempfile")"
+    rm -f -- "$tempfile"
+}
+# let Ctrl-O open ranger:
 bind '"\C-o":"ranger\C-m"'
 
 
