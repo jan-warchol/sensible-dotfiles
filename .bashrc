@@ -5,7 +5,7 @@
 # ALIASES
 
 # redefine some commands by adding "default" settings
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias less='less --RAW-CONTROL-CHARS'  # parses color codes!
 
@@ -16,7 +16,6 @@ alias grp='grep --line-number --color=always'
 alias l='ls --file-type --ignore-backups'
 alias la='ls --almost-all --file-type'
 alias ll='ls -l --human-readable --almost-all --file-type'
-alias ld='ll --group-directories-first'
 
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
