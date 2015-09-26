@@ -117,6 +117,7 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 #GIT_PS1_SHOWCOLORHINTS="true"
 
-# Use PROMPT_COMMAND instead of PS1 because it supports more features of __git_ps1.
-# The syntax used here is "__git_ps1 <prefix> <suffix>", see link above.
-export PROMPT_COMMAND='__git_ps1 "${usercolor}\u@\h${pathcolor}${separator}\w${resetcolors}" "\n\\$ "'
+# we don't want errors when git is not installed
+type git &>/dev/null || function __git_ps1 () { true; }
+
+export PS1="${usercolor}\u@\h${pathcolor}${separator}\w${resetcolors}\$(__git_ps1)\n\\$ "
