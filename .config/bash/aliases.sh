@@ -19,11 +19,11 @@ alias L='less'  # typing |L is convenient, especially using left shift
 
 # Show a desktop notification when a command finishes. Use like this:
 #   sleep 5; alert
-if ! type alert &>/dev/null; then alert() {
+function alert() {
     if [ $? = 0 ]; then icon=terminal; else icon=error; fi
     last_cmd="$(history | tail -n1 | sed 's/^\s*[0-9]*\s*//' | sed 's/;\s*alert\s*$//')"
     notify-send -i $icon "$last_cmd"
-} fi
+}
 
 # let aliases work after sudo (see http://askubuntu.com/a/22043)
 alias sudo='sudo '
