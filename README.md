@@ -41,7 +41,7 @@ Both are available from apt repositories: `sudo apt-get install ranger trash-cli
 Features
 --------
 
-- **git-aware [bash prompt](.config/bash/prompt.sh)** displaying repository status, like this:  
+- **git-aware [bash prompt](.bashrc#L77)** displaying repository status, like this:  
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very convenient!_
 
 - lots of git [aliases and settings](.gitconfig), in particular:
@@ -49,11 +49,11 @@ Features
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly
 
-- handy [shell aliases](.config/bash/aliases.sh) - did you know that
+- handy [shell aliases](.bashrc#L5) - did you know that
   - `grep` can highlight matches even when piped to `less`?
   - `ls` can group directories together, listing them above files?
 
-- cool bash [settings](.config/bash/settings.sh), for example:
+- cool bash [settings](.bashrc#L47), for example:
   - case-insensitive autocompletion,
   - `cd` to a directory just by typing its name, autocorrect typos
 
