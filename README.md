@@ -44,8 +44,8 @@ Features
 - **git-aware [bash prompt](.config/bash/prompt.sh)** displaying repository status, like this:  
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very convenient!_
 
-- lots of git [aliases and settings](.config/git/config), in particular:
-  - informative and **pretty [logs](.config/git/config#L50)**,
+- lots of git [aliases and settings](.gitconfig), in particular:
+  - informative and **pretty [logs](.gitconfig#L50)**,
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly
 
