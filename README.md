@@ -50,6 +50,9 @@ Features
   - case-insensitive autocompletion,
   - `cd` to a directory just by typing its name, autocorrect typos
 
+- Tim Pope's [sensible.vim](https://github.com/tpope/vim-sensible) - reasonable
+  and widely accepted default configuration for Vim
+
 - if you use [Vagrant](https://www.vagrantup.com/), this [default `Vagrantfile`]
   (.vagrant.d/Vagrantfile) will install sensible-dotfiles on your Vagrant boxes
   as well!
