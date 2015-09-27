@@ -7,7 +7,6 @@
 # redefine some commands by adding "default" settings
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
-alias less='less --RAW-CONTROL-CHARS'  # parses color codes!
 
 # this will color matches even when output to a non-tty (e.g. piped to less)
 alias grp='grep --line-number --color=always'
@@ -20,7 +19,7 @@ alias ll='ls -l --human-readable --almost-all --file-type'
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
 alias v='vim'
-alias L='less'  # typing |L is convenient, especially using left shift
+alias L='less --RAW-CONTROL-CHARS'  # parses color codes!
 
 # Aliasing 'g' to 'git' wouldn't be useful if it didn't have autocompletion.
 # This is tricky and I'm not sure I did it 100% right, but it seems to work.
