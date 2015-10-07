@@ -5,7 +5,7 @@ $install_dotfiles = <<EOF
     mkdir -p .dotfiles
     tar xf master.tar.gz --directory .dotfiles --strip-components=1
     .dotfiles/link-dotfiles.sh
-    rm master.tar.gz
+    rm -f master.tar.gz
 EOF
 
 Vagrant.configure(2) do |config|
