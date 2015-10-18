@@ -67,6 +67,10 @@
 [color]
     ui = auto
 
+[color "status"]
+    # use different color than untracked and unmerged paths have
+    changed = yellow
+
 [core]
     # display non-ASCII characters (e.g. Polish) instead of quoting them
     quotepath = false
@@ -87,3 +91,4 @@
 [rebase]
     # automatically process "fixup!" commits when rebasing interactively
     autosquash = true
+
