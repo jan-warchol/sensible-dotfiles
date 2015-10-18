@@ -75,5 +75,7 @@ Both are available from apt repositories: `sudo apt-get install ranger trash-cli
 License
 -------
 
-I release this work into public domain.  Attribution will be very welcome,
-but it's not strictly required.  Enjoy!
+I release my work (this means everything except vim-sensible plugin, which is
+licensed under [Vim license](.vim/plugin/sensible.vim-readme.md#license))
+into public domain. 
+Attribution will be welcome, but it's not legally required.  Enjoy!
