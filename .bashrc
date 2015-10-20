@@ -102,10 +102,8 @@ resetcolors="\[${DEFAULT_COLOR}\]"
 # selecting with a double click) and display username in a different color.
 if [ -n "$SSH_CONNECTION" ]; then
     usercolor="\[${BR_MAGENTA}\]"
-    separator=":"
 else
     usercolor="\[${BR_BLUE}\]"
-    separator=" "
 fi
 
 # $(__git_ps1) displays git repository status in the prompt, which is extremely handy.
@@ -119,4 +117,5 @@ GIT_PS1_SHOWUPSTREAM="verbose git"
 # we don't want errors when git is not installed
 type git &>/dev/null || function __git_ps1 () { true; }
 
-export PS1="${usercolor}\u@\h${pathcolor}${separator}\w${resetcolors}\$(__git_ps1)\n\\$ "
+export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\n\\$ "
+
