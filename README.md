@@ -34,7 +34,7 @@ if you add new files to the repo, to create any missing symlinks.
 Features
 --------
 
-- **git-aware [bash prompt](.bashrc#L85)** displaying repository status, like this:  
+- **git-aware [bash prompt](.bashrc#L80)** displaying repository status, like this:  
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very convenient!_
 
 - [git aliases and settings](.gitconfig), in particular:
@@ -46,16 +46,16 @@ Features
   - `grep` can highlight matches even when piped to `less`?
   - `ls` can group directories together, listing them above files?
 
-- cool bash [settings](.bashrc#L46), for example:
+- cool bash [settings](.bashrc#L43), for example:
   - case-insensitive autocompletion,
   - `cd` to a directory just by typing its name, autocorrect typos
 
 - Tim Pope's [sensible.vim](https://github.com/tpope/vim-sensible) - reasonable
   and widely accepted default configuration for Vim
 
-- if you use [Vagrant](https://www.vagrantup.com/), this [default `Vagrantfile`]
-  (.vagrant.d/Vagrantfile) will install sensible-dotfiles on your Vagrant boxes
-  as well!
+- turtles all the way down: a global [`Vagrantfile`](.vagrant.d/Vagrantfile)
+  that lets [Vagrant](https://www.vagrantup.com/) install sensible-dotfiles
+  on your VMs as well!
 
 
 
@@ -75,5 +75,7 @@ Both are available from apt repositories: `sudo apt-get install ranger trash-cli
 License
 -------
 
-I release this work into public domain.  Attribution will be very welcome,
-but it's not strictly required.  Enjoy!
+I release my work (this means everything except vim-sensible plugin, which is
+licensed under [Vim license](.vim/plugin/sensible.vim-readme.md#license))
+into public domain. 
+Attribution will be welcome, but it's not legally required.  Enjoy!

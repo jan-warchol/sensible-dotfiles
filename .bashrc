@@ -21,10 +21,8 @@ alias g='git'
 alias v='vim'
 alias L='less --RAW-CONTROL-CHARS'  # parses color codes!
 
-# Aliasing 'g' to 'git' wouldn't be useful if it didn't have autocompletion.
-# This is tricky and I'm not sure I did it 100% right, but it seems to work.
+# Aliasing 'g' to 'git' wouldn't be useful without autocompletion.
 complete -o default -o nospace -F _git g
-# make sure the autocompletion function (`_git`) is loaded
 . /usr/share/bash-completion/completions/git 2> /dev/null
 
 # Instead of rm, which deletes files permanently, I prefer to use trash-cli
@@ -44,11 +42,10 @@ function alert() {
 
 # SETTINGS
 
-# enable autocompletion
+# enable autocompletion and make it case-insensitive
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-# make autocompletion case-insensitive
 bind "set completion-ignore-case on"
 
 # let aliases work after sudo (see http://askubuntu.com/a/22043)
@@ -58,7 +55,7 @@ alias sudo='sudo '
 shopt -s autocd
 shopt -s cdspell
 
-# shell history is very useful, so let's make sure we can harness its full power
+# shell history is useful, let's have more of it
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export HISTCONTROL=ignoredups   # don't store duplicated commands
@@ -67,56 +64,43 @@ shopt -s histappend   # don't overwrite history file after each session
 # disable useless flow control binding, allowing Ctrl-S to search history forward
 stty -ixon
 
-# ranger is a vim-style console file manager (http://nongnu.org/ranger/).
-# This lets bash automatically change current directory to the last one visited
-# inside ranger.  (Use "cd -" if you want to return to the original directory.)
+# let Ctrl-O open ranger, a console file manager (http://nongnu.org/ranger/):
+bind '"\C-o":"ranger\C-m"'
+# this wrapper lets bash automatically change current directory to the last one
+# visited inside ranger.  (Use "cd -" to return to the original directory.)
 function ranger {
     tempfile="$(mktemp)"
     /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" && cd -- "$(cat "$tempfile")"
     rm -f -- "$tempfile"
 }
-# let Ctrl-O open ranger:
-bind '"\C-o":"ranger\C-m"'
 
 
 
 # PROMPT
 
-# Colored prompt stands out in the sea of text, which makes it _much_ easier
-# to navigate through the terminal output.  Note that I'm using bright versions
-# of colors, because in many color palettes the normal ones are too dim -
-# depending on your palette, you may want to use \e[34m, \e[35m and \e[36m
-# instead, or use green (\e[32m / \e[92m) for username.
-BR_BLUE="\e[94m"
-BR_MAGENTA="\e[95m"
-BR_CYAN="\e[96m"
-DEFAULT_COLOR="\e[0m"
+# Colored prompt makes it easier to visually parse terminal output. Note that
+# using \[ and \] is necessary to prevent weird behavior (lines overlapping).
 
-# Using \[ and \] around color codes is necessary to prevent issues
-# with the prompt such as text overlapping one line over and over again.
-pathcolor="\[${BR_CYAN}\]"
-resetcolors="\[${DEFAULT_COLOR}\]"
-
-# When I'm logged in via ssh, display the path in scp-like format (-> easy
-# selecting with a double click) and display username in a different color.
-if [ -n "$SSH_CONNECTION" ]; then
-    usercolor="\[${BR_MAGENTA}\]"
-    separator=":"
+# I'm using bright colors because in most terminal palettes the "normal" ones
+# (\e[35m, \e[34m and \e[36m) are too dim - feel free to adjust.
+if [ -n "$SSH_CONNECTION" ]; then  # connected through SSH?
+    usercolor="\[\e[95m\]"  # yes -> magenta
 else
-    usercolor="\[${BR_BLUE}\]"
-    separator=" "
+    usercolor="\[\e[94m\]"  # no -> blue
 fi
+pathcolor="\[\e[96m\]"  # cyan path
+resetcolors="\[\e[0m\]"
 
-# $(__git_ps1) displays git repository status in the prompt, which is extremely handy.
+# $(__git_ps1) displays git repository status in the prompt - very handy!
 # Read more: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
-#GIT_PS1_SHOWCOLORHINTS="true"
 
-# we don't want errors when git is not installed
+# we don't want "command not found" errors when __git_ps1 is not installed
 type git &>/dev/null || function __git_ps1 () { true; }
 
-export PS1="${usercolor}\u@\h${pathcolor}${separator}\w${resetcolors}\$(__git_ps1)\n\\$ "
+export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\n\\$ "
+

@@ -1,12 +1,12 @@
-" NOTE: for simplicity's sake, Tim Pope's sensible.vim is included directly
-" inside this repository (as a subtree attached to .vim/ directory).  If you
-" are planning to use other Vim plugins, you should remove it from there and
-" install it using a plugin manager (I recommend Vim-plug).
-
-" let arrow keys move cursor to the previous/next line when it reaches
-" first/last character in line
+" let arrow keys move cursor across newlines
 set whichwrap+=<,>,[,]
 
-" IMO pressing 'q' in normal mode should exit vim, but purists wouldn't agree
-"map q :qa<CR>
+" highlight search matches (clear the highlighting with C-l)
+set hlsearch
+" unlike Vim's default, this coloring won't interfere with syntax highlighting
+highlight Search cterm=reverse ctermfg=NONE ctermbg=NONE
+
+" use space, the most prominent key, as the beginning of user-defined commands
+let mapleader = "\<Space>"
+nnoremap <Leader>q :q<CR>  " surprisingly easier to type than :q<Enter>
 

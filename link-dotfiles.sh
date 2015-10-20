@@ -22,7 +22,7 @@ for f in `find ./ -name .git -prune -or -type f -path './.*' -printf '%P\n'`; do
             mv "$HOME/$f" "$HOME/$f.old" --backup=numbered
         fi
         echo "Linking $f"
-        ln -s "$REPO_PATH/$f" "$HOME/$f" --backup=numbered
+        ln -s "$REPO_PATH/$f" "$HOME/$f"
     fi
 done
 
