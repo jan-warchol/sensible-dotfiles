@@ -95,7 +95,6 @@ resetcolors="\[\e[0m\]"
 # $(__git_ps1) displays git repository status in the prompt - very handy!
 # Read more: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
