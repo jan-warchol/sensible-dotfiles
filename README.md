@@ -39,7 +39,7 @@ Features
   `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very convenient!_
 
 - [git aliases and settings](.gitconfig), in particular:
-  - informative and **pretty [logs](.gitconfig#L47)**,
+  - **awesome [logs](.gitconfig#L32)**,
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly
 

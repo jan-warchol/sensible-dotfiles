@@ -4,25 +4,16 @@
     ap = add --patch   # choose which hunks to add - very useful
     au = add --update   # stage only changes in tracked files
 
-    b = branch
     br = branch
-    bv = branch --verbose --verbose   # lists branches with SHAs and upstreams
-
-    c = checkout
     co = checkout
 
     # see what you're commiting when editing the commit message
-    k = commit --verbose
     ci = commit --verbose
 
     d = diff --color=always
     wd = diff --color=always --word-diff=color   # mnemonic: Word-Diff
 
-    g = grep --color=always --line-number
-    gh5 = grep --color=always --heading --context 5
-
-    # always run log with --graph so that the topology will be visualized!
-    l = log --color=always --decorate --graph
+    g3 = grep --color=always --line-number --context 3
 
     # unlike plain `pull`, this won't attempt a merge that may result in conflicts
     pl = pull --ff-only
