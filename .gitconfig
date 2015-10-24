@@ -1,10 +1,6 @@
 [alias]
     # COMMON SHORTHANDS
 
-    # It can be convenient to view git output using `less`, but by default git
-    # turns coloring off when the output is not a tty.  To override that we add
-    # --color=always to some aliases (and use `less -R` for viewing).
-
     ap = add --patch   # choose which hunks to add - very useful
     au = add --update   # stage only changes in tracked files
 
@@ -76,6 +72,11 @@
 [merge]
     # in case of merge conflict also show how common ancestor looked like
     conflictstyle = diff3
+
+[pager]
+    # don't wrap lines in log and blame output (needed since git 2.1)
+    log = "less -S"
+    blame = "less -S"
 
 [push]
     # git < 2.0 pushed all matching branches by default (could be dangerous)
