@@ -22,8 +22,9 @@ Installation
 Clone the repo and run the [installation script](link-dotfiles.sh)
 (it will backup your existing config files):
 
-    git clone https://github.com/janek-warchol/sensible-dotfiles ~/.dotfiles.git
-    ~/.dotfiles.git/link-dotfiles.sh
+    git clone https://github.com/janek-warchol/.sensible-dotfiles
+    cd .sensible-dotfiles/
+    ./link-dotfiles.sh
 
 You'll probably want to move some parts of your old configuration into
 the new files.  Keep in mind that you need to re-run the installation script
