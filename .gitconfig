@@ -1,12 +1,12 @@
 [alias]
-    # "SHORTCUT" ALIASES
+    # COMMON SHORTHANDS
 
     # It can be convenient to view git output using `less`, but by default git
     # turns coloring off when the output is not a tty.  To override that we add
     # --color=always to some aliases (and use `less -R` for viewing).
 
-    ap = add --patch   # interactively select hunks to add, very useful
-    au = add --update   # stage all changes in already tracked files
+    ap = add --patch   # choose which hunks to add - very useful
+    au = add --update   # stage only changes in tracked files
 
     b = branch
     br = branch
@@ -15,8 +15,7 @@
     c = checkout
     co = checkout
 
-    # commit --verbose shows a preview of staged changes when editing the commit
-    # message - you no longer have to run 'git diff' before every commit :)
+    # see what you're commiting when editing the commit message
     k = commit --verbose
     ci = commit --verbose
 
@@ -43,25 +42,20 @@
     st = status
 
 
-
     # PRETTY LOGS
 
-    # Names are mnemonics based on common aliases of 'ls' command.
-    # Inspired by http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
-
-    # basic one-line log, I use it all the time
+    # compact log with branch names etc.
     ls = !git log --color=always --decorate --graph --date=relative \
     --format=tformat:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(dim)- %an, %ad%C(reset)'
 
-    # as above, but includes all local and remote branches
+    # log All local and remote branches
     la = !git ls HEAD --branches --remotes
 
-    # "Long" format - full commit message and summary of changes
-    ll = !git log --color=always --decorate --graph --stat-graph-width=30 --stat-count=30
-
-    # similar to ls, but always include both HEAD and its upstream (if present)
+    # log both HEAD and its Upstream (if present)
     lu = !git ls HEAD `git for-each-ref --format='%(upstream:short)' HEAD $(git symbolic-ref --quiet HEAD)`
 
+    # Long format - full commit message and summary of changes
+    ll = !git log --color=always --decorate --graph --stat-graph-width=30 --stat-count=30
 
 
 [color]
@@ -76,7 +70,7 @@
     quotepath = false
 
 [diff]
-    # detect renamed files and show only actual differences between versions
+    # detect renamed files and show only actual differences between them
     renames = copies
 
 [merge]
@@ -84,8 +78,7 @@
     conflictstyle = diff3
 
 [push]
-    # the default before v2.0 was to push all matching branches, which could
-    # be dangerous
+    # git < 2.0 pushed all matching branches by default (could be dangerous)
     default = simple
 
 [rebase]
