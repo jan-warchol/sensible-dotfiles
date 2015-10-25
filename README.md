@@ -1,3 +1,8 @@
+Sensible dotfiles
+=================
+
+![Screenshot of sensible-dotfiles](https://i.imgur.com/a4auwdx.png)
+
 Think of this repo as a set of defaults that command line tools should have
 had in the first place - a selection of common tweaks and tricks for your
 terminal.
