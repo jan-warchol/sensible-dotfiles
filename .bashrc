@@ -5,16 +5,18 @@
 # ALIASES
 
 # redefine some commands by adding "default" settings
-alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
+if man ls | grep group-directories-first >&/dev/null; then
+    alias ls='ls --color=auto --group-directories-first'
+fi
 
 # this will color matches even when output to a non-tty (e.g. piped to less)
 alias grp='grep --line-number --color=always'
 
 # common ls aliases
-alias l='ls --file-type --ignore-backups'
-alias la='ls --almost-all --file-type'
-alias ll='ls -l --human-readable --almost-all --file-type'
+alias l='ls -FB'  # --classify --ignore-backups
+alias la='ls -FA'  # --classify --almost-all
+alias ll='ls -Flah'  # --classify --all --human-readable'
 
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
@@ -52,7 +54,7 @@ bind "set completion-ignore-case on"
 alias sudo='sudo '
 
 # cd to a dir just by typing its name (requires bash > 4.0), autocorrect typos
-shopt -s autocd
+[ ${BASH_VERSION:0:1} -ge 4 ] && shopt -s autocd
 shopt -s cdspell
 
 # shell history is useful, let's have more of it
@@ -99,7 +101,7 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
 # we don't want "command not found" errors when __git_ps1 is not installed
-type git &>/dev/null || function __git_ps1 () { true; }
+type __git_ps1 &>/dev/null || function __git_ps1 () { true; }
 
 export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\n\\$ "
 
