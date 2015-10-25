@@ -54,7 +54,7 @@ bind "set completion-ignore-case on"
 alias sudo='sudo '
 
 # cd to a dir just by typing its name (requires bash > 4.0), autocorrect typos
-shopt -s autocd
+[ ${BASH_VERSION:0:1} -ge 4 ] && shopt -s autocd
 shopt -s cdspell
 
 # shell history is useful, let's have more of it
