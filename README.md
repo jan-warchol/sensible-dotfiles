@@ -3,21 +3,24 @@ Sensible dotfiles
 
 ![Screenshot of sensible-dotfiles](https://i.imgur.com/a4auwdx.png)
 
-Think of this repo as a set of defaults that command line tools should have
-had in the first place - a selection of common tweaks and tricks for your
-terminal.
+This is a selection of most common tweaks that make working with terminal
+more enjoyable and productive.  Some command line defaults are decades old -
+leave them behind and make your life easier!
 
-* If you haven't done much command line customization before, this will be
-  a good starting point.
+* If you haven't done much customization before, this will be a good starting
+  point.  (It's also a good opportunity to start versioning your dotfiles.)
 
-* If you are managing a shared Linux server, you can install this rather
-  than confuse other people with your personal dotfiles.
+* If you are pair programming or otherwise sharing a machine, you can install
+  this rather than confuse other people with your personal configuration.
 
-* It's also a good opportunity to start versioning your configuration :)
+* You can install this on all your VMs etc. to have some basic amenities without
+  turning everything upside down.
 
-I will keep this repository small and focused.
-If you're interested in my personal configuration (forked from this repo), look
-[here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
+I will keep this repository small and focused, including only settings that
+are _essential_ for comfortable work environment.  If you think that something
+doesn't make a reasonable default and should be removed (or that I missed
+an important setting), please [open an issue]
+(https://github.com/janek-warchol/.sensible-dotfiles/issues).
 
 
 
@@ -33,15 +36,15 @@ Clone the repo and run the [installation script](link-dotfiles.sh)
 
 You'll probably want to move some parts of your old configuration into
 the new files.  Keep in mind that you need to re-run the installation script
-if you add new files to the repo, to create any missing symlinks.
+if you add new files to the repo, to create missing symlinks.
 
 
 
 Features
 --------
 
-- **git-aware [bash prompt](.bashrc#L80)** displaying repository status, like this:  
-  `janek@janek ~/.dotfiles.git (master|REBASE-i 3/5)` - _very convenient!_
+- **git-aware [prompt](.bashrc#L80)** displaying repository status (see
+  screenshot) - _very convenient!_
 
 - [git aliases and settings](.gitconfig), in particular:
   - **awesome [logs](.gitconfig#L32)**,
@@ -75,6 +78,9 @@ Want more?  There are some additional programs worth installing:
   to system trash.  Have you ever `rm`'ed wrong file and wanted to get it back?
 
 Both are available from apt repositories: `sudo apt-get install ranger trash-cli`.
+
+If you're interested in my personal configuration (forked from this repo), look
+[here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
 
 
 
