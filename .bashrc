@@ -6,7 +6,7 @@
 
 # redefine some commands by adding "default" settings
 alias grep='grep --color=auto'
-if ls --help | grep group-directories-first >&/dev/null; then
+if man ls | grep group-directories-first >&/dev/null; then
     alias ls='ls --color=auto --group-directories-first'
 fi
 
@@ -14,9 +14,9 @@ fi
 alias grp='grep --line-number --color=always'
 
 # common ls aliases
-alias l='ls --file-type --ignore-backups'
-alias la='ls --almost-all --file-type'
-alias ll='ls -l --human-readable --almost-all --file-type'
+alias l='ls -FB'  # --classify --ignore-backups
+alias la='ls -FA'  # --classify --almost-all
+alias ll='ls -Flah'  # --classify --all --human-readable'
 
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
