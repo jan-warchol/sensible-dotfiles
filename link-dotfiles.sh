@@ -9,7 +9,7 @@ echo -e "\nInstalling dotfiles from $REPO_PATH.\n"
 
 # find all dotfiles in this repo (ignore .git dir, README and this script)
 # and link them to $HOME, making backups of user's existing dotfiles
-for f in `find ./ -name .git -prune -or -type f -path './.*' -printf '%P\n'`; do
+for f in `find . -name .git -prune -or -type f -path './.*' -print | sed 's|^\./||'`; do
     mkdir --parents "$HOME/$(dirname $f)"
     if [ "$REPO_PATH/$f" -ef "$HOME/$f" ]; then
         echo "Already linked: $f"
