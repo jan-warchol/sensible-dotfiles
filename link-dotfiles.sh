@@ -2,7 +2,7 @@
 
 set -eu
 IFS=$(echo -en "\n\b")  # for filenames with spaces
-bold="\e[1;37m"; green="\e[00;32m"; normal="\e[00m"
+bold="\033[1;37m"; green="\033[00;32m"; normal="\033[00m"
 
 cd $(dirname "$0"); REPO_PATH=$(pwd)
 echo -e "\nInstalling dotfiles from $REPO_PATH.\n"
