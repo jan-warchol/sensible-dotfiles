@@ -101,7 +101,7 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="verbose git"
 
 # we don't want "command not found" errors when __git_ps1 is not installed
-type git &>/dev/null || function __git_ps1 () { true; }
+type __git_ps1 &>/dev/null || function __git_ps1 () { true; }
 
 export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\n\\$ "
 
