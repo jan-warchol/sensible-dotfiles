@@ -5,8 +5,10 @@
 # ALIASES
 
 # redefine some commands by adding "default" settings
-alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
+if ls --help | grep group-directories-first >&/dev/null; then
+    alias ls='ls --color=auto --group-directories-first'
+fi
 
 # this will color matches even when output to a non-tty (e.g. piped to less)
 alias grp='grep --line-number --color=always'
