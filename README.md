@@ -82,12 +82,3 @@ Both are available from apt repositories: `sudo apt-get install ranger trash-cli
 If you're interested in my personal configuration (forked from this repo), look
 [here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
 
-
-
-License
--------
-
-I release my work (this means everything except vim-sensible plugin, which is
-licensed under [Vim license](.vim/plugin/sensible.vim-readme.md#license))
-into public domain. 
-Attribution will be welcome, but it's not legally required.  Enjoy!
