@@ -44,10 +44,10 @@ Features
 --------
 
 - **git-aware [prompt](.bashrc#L80)** displaying repository status (see
-  screenshot) - _very convenient!_
+  [screenshot](https://i.imgur.com/a4auwdx.png)) - _very convenient!_
 
 - [git aliases and settings](.gitconfig), in particular:
-  - **awesome [logs](.gitconfig#L32)**,
+  - **awesome [logs](.gitconfig#L32)** (see [screenshot](https://i.imgur.com/a4auwdx.png)),
   - more information in case of merge conflicts,
   - `git diff` that displays file renames correctly
 
