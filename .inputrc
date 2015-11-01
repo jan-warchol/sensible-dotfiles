@@ -9,3 +9,11 @@ $include /etc/inputrc
 "\e\e[C": forward-word
 "\e\e[D": backward-word
 
+# make Ctrl-up/down search history for commands starting with currently
+# typed prefix (unlike Ctrl-R/S, which searches entire command string).
+"\e[1;5A":history-search-backward
+"\e[1;5B":history-search-forward
+"\e[5A": history-search-backward
+"\e[5B": history-search-forward
+"\e\e[A": history-search-backward
+"\e\e[B": history-search-forward
