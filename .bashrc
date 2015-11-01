@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Load stuff specific to Macs when appropriate
+[ `uname` = Darwin ] && source .osx-compatibility.sh
+
 
 # ALIASES
 
