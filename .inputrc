@@ -1,0 +1,11 @@
+# by default system-wide settings are ignored when local ~/.inputrc exists
+$include /etc/inputrc
+
+# ensure Ctrl-left/right move cursor one word backward/forward
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
