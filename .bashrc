@@ -1,30 +1,42 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+
 # Load stuff specific to Macs when appropriate
 [ `uname` = Darwin ] && source .osx-compatibility.sh
 
-
-# ALIASES
-
-# redefine some commands by adding "default" settings
-alias grep='grep --color=auto'
+# list directories before files (if installed version of ls allows this)
 if man ls | grep group-directories-first >&/dev/null; then
     alias ls='ls --color=auto --group-directories-first'
 fi
 
-# this will color matches even when output to a non-tty (e.g. piped to less)
-alias grp='grep --line-number --color=always'
+# default settings for less
+export LESS='-MRi#8j.5'
+#             |||| `- center on search matches
+#             |||`--- scroll horizontally 8 columns at a time
+#             ||`---- case-insensitive search unless pattern contains uppercase
+#             |`----- parse color codes
+#             `------ show more information in prompt
+
+# default settings for grep
+export GREP_OPTIONS='--color --binary-files=without-match --exclude-dir .git'
+
+
+
+# ALIASES
 
 # common ls aliases
 alias l='ls -FB'  # --classify --ignore-backups
 alias la='ls -FA'  # --classify --almost-all
 alias ll='ls -Flah'  # --classify --all --human-readable'
 
+# this will color matches even when output to a non-tty (e.g. piped to less)
+alias grep3='grep --color=always --line-number --context=3'
+
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
 alias v='vim'
-alias L='less --RAW-CONTROL-CHARS'  # parses color codes!
+alias L='less'
 
 # Aliasing 'g' to 'git' wouldn't be useful without autocompletion.
 complete -o default -o nospace -F _git g
