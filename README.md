@@ -4,8 +4,8 @@ Sensible dotfiles
 ![Screenshot of sensible-dotfiles](https://i.imgur.com/a4auwdx.png)
 
 This is a selection of most common tweaks that make working with terminal
-more enjoyable and productive.  Some command line defaults are decades old -
-leave them behind and make your life easier!
+more enjoyable and productive.  Some command line defaults are over a decade
+old - leave them behind and make your life easier!
 
 * If you haven't done much customization before, this will be a good starting
   point.  (It's also a good opportunity to start versioning your dotfiles.)
@@ -14,7 +14,7 @@ leave them behind and make your life easier!
   this rather than confuse other people with your personal configuration.
 
 * You can install this on all your VMs etc. to have some basic amenities without
-  turning everything upside down.
+  making too many changes.
 
 I will keep this repository small and focused, including only settings that
 are _essential_ for comfortable work environment.  If you think that something
@@ -43,21 +43,31 @@ if you add new files to the repo, to create missing symlinks.
 Features
 --------
 
-- **git-aware [prompt](.bashrc#L80)** displaying repository status (see
+Here's a summary of the most interesting settings:
+
+- **git-aware [prompt](.bashrc#L97)** displaying repository status (see
   [screenshot](https://i.imgur.com/a4auwdx.png)) - _very convenient!_
 
-- [git aliases and settings](.gitconfig), in particular:
-  - **awesome [logs](.gitconfig#L32)** (see [screenshot](https://i.imgur.com/a4auwdx.png)),
-  - more information in case of merge conflicts,
-  - `git diff` that displays file renames correctly
+- essential [git configuration](.gitconfig):
+  - aliases for displaying **awesome [logs](.gitconfig#L32)**
+    (see [screenshot](https://i.imgur.com/a4auwdx.png)),
+  - a dozen of common shorthands, including `ci`, `co`, `br` and `st`,
+  - improved output layout and coloring for `status`, `grep`, `blame` and `log`,
+  - better default behaviour in case of merge conflicts, file renames etc.
 
-- handy [shell aliases](.bashrc#L5) - did you know that
-  - `grep` can highlight matches even when piped to `less`?
-  - `ls` can group directories together, listing them above files?
+- reasonable defaults and convenient aliases for [`ls`, `less` and `grep`]
+  (.bashrc#L8):
+  - let `ls` group directories together, listing them above files,
+  - better searching and navigation inside `less`,
+  - did you know that `grep` can highlight matches even when piped to `less`?
 
-- cool bash [settings](.bashrc#L43), for example:
+- handy bash [settings](.bashrc#L60), for example:
   - case-insensitive autocompletion,
+  - more powerful shell [history](.bashrc#L75) and [navigation](.inputrc#L12),
   - `cd` to a directory just by typing its name, autocorrect typos
+
+- disable [SSH timeouts](.ssh/config) - don't let the connection hang because
+  of inactivity
 
 - Tim Pope's [sensible.vim](https://github.com/tpope/vim-sensible) - reasonable
   and widely accepted default configuration for Vim

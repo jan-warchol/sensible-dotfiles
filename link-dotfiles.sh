@@ -18,7 +18,7 @@ for f in `find . -name .git -prune -or -type f -path './.*' -print | sed 's|^\./
         ln -s --force "$REPO_PATH/$f" "$HOME/$f"
     else
         if [ -e "$HOME/$f" ]; then
-            echo -e "Renaming your existing ${bold}${f}${normal} to $f.old"
+            echo -e "Backing up your existing ${bold}${f}${normal} as $f.old"
             mv -i "$HOME/$f" "$HOME/$f.old"
         fi
         echo "Linking $f"

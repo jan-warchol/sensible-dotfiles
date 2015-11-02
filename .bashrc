@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 
 
-# Load stuff specific to Macs when appropriate
+# Load stuff specific to Macs if appropriate
 [ `uname` = Darwin ] && source .osx-compatibility.sh
 
 # list directories before files (if installed version of ls allows this)
