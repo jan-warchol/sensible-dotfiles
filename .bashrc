@@ -10,7 +10,7 @@ if man ls | grep group-directories-first >&/dev/null; then
     alias ls='ls --color=auto --group-directories-first'
 fi
 
-# default settings for less
+# default settings for less. You may also want to disable line wrapping with -S
 export LESS='-MRi#8j.5'
 #             |||| `- center on search matches
 #             |||`--- scroll horizontally 8 columns at a time

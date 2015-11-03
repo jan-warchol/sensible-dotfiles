@@ -59,6 +59,8 @@
 [core]
     # display non-ASCII characters (e.g. Polish) instead of quoting them
     quotepath = false
+    # restore default pager behavior (needed because we manually set $LESS)
+    pager = "less -FRX"
 
 [diff]
     # detect renamed files and show only actual differences between them
