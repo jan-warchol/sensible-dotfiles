@@ -86,6 +86,8 @@ Want more?  There are some additional programs worth installing:
   It's **much better** than typing `cd` and `ls` all the time.
 - [`trash-cli`](https://github.com/andreafrancia/trash-cli): command-line interface
   to system trash.  Have you ever `rm`'ed wrong file and wanted to get it back?
+- remap Caps Lock to control and then use [`xcape`](https://github.com/alols/xcape)
+  to make it emit escape when pressed on its own.  This one is a *real killer* :-)
 
 Both are available from apt repositories: `sudo apt-get install ranger trash-cli`.
 
