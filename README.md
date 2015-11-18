@@ -94,3 +94,13 @@ Both are available from apt repositories: `sudo apt-get install ranger trash-cli
 If you're interested in my personal configuration (forked from this repo), look
 [here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
 
+
+
+Backward compatibility
+----------------------
+
+Please note that I may occasionally remove some settings if it turns out that
+they interfere with something else or are too controversial.  However, this
+will happen rarely, and in each case you will be able to get previous behavior
+back by reverting the commit that removed it.
+
