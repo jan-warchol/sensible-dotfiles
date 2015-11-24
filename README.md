@@ -81,15 +81,21 @@ Here's a summary of the most interesting settings:
 Other good stuff
 ----------------
 
-Want more?  There are some additional programs worth installing:
-- [`ranger`](http://nongnu.org/ranger/): a console file manager.
-  It's **much better** than typing `cd` and `ls` all the time.
-- [`trash-cli`](https://github.com/andreafrancia/trash-cli): command-line interface
-  to system trash.  Have you ever `rm`'ed wrong file and wanted to get it back?
-- remap Caps Lock to control and then use [`xcape`](https://github.com/alols/xcape)
-  to make it emit escape when pressed on its own.  This one is a *real killer* :-)
+Want more?  Here are a couple things I recommend:
+- remap Caps Lock to control (much more comfortable to press!): add `setxkbmap
+  -option ctrl:nocaps` to your `~/.profile`.  If you really want to have caps
+  lock functionality, use `setxkbmap -option shift:both_capslock` to be able to
+  toggle caps lock by pressing two shifts simultaneously.
+- use [`xcape`](https://github.com/alols/xcape) to make your remapped caps lock
+  emit escape when pressed on its own.  Great for vim users :-)
+- install [`ranger`](http://nongnu.org/ranger/) - a console file manager.  It's
+  **much better** than typing `cd` and `ls` all the time.
+- install [`trash-cli`](https://github.com/andreafrancia/trash-cli) -
+  command-line interface to system trash.  Have you ever `rm`'ed wrong file and
+  wanted to get it back?
 
-Both are available from apt repositories: `sudo apt-get install ranger trash-cli`.
+Both ranger and trash-cli are available from apt repositories: `sudo apt-get
+install ranger trash-cli`.
 
 If you're interested in my personal configuration (forked from this repo), look
 [here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
