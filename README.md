@@ -85,10 +85,12 @@ Want more?  Here are a couple things I recommend:
 - remap the close-to-useless Caps Lock key to control - makes pressing common
   keyboard shortcuts much more comfortable:
   - on Linux, add this to your `~/.profile`:
+
     ```
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
     ```
+
     (the second command allows you to toggle caps lock by pressing two shifts
     simultaneously).
   - on OSX, you can change Caps Lock key behaviour in System Preferences ->
