@@ -82,10 +82,17 @@ Other good stuff
 ----------------
 
 Want more?  Here are a couple things I recommend:
-- remap Caps Lock to control (much more comfortable to press!): add `setxkbmap
-  -option ctrl:nocaps` to your `~/.profile`.  If you really want to have caps
-  lock functionality, use `setxkbmap -option shift:both_capslock` to be able to
-  toggle caps lock by pressing two shifts simultaneously.
+- remap the close-to-useless Caps Lock key to control - makes pressing common
+  keyboard shortcuts much more comfortable:
+  - on Linux, add this to your `~/.profile`:
+    ```
+    setxkbmap -option ctrl:nocaps
+    setxkbmap -option shift:both_capslock
+    ```
+    (the second command allows you to toggle caps lock by pressing two shifts
+    simultaneously).
+  - on OSX, you can change Caps Lock key behaviour in System Preferences ->
+    Keyboard -> Modifier Keys.
 - use [`xcape`](https://github.com/alols/xcape) to make your remapped caps lock
   emit escape when pressed on its own.  Great for vim users :-)
 - install [`ranger`](http://nongnu.org/ranger/) - a console file manager.  It's
