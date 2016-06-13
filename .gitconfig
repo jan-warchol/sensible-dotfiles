@@ -44,6 +44,9 @@
     # Long format - full commit message and summary of changes
     ll = !git log --color=always --decorate --graph --stat-graph-width=30 --stat-count=30
 
+    # reflog with dates and commit message subject
+    rf = !GIT_PAGER='less -REXS' git log --walk-reflogs --format='%C(dim)%<(21,trunc)%ci%x08%x08%x08%x08%x08 %C(reset)%gd%C(reset): %C(auto)%h%C(reset) %gs %C(dim)- %<(33,trunc)%s%C(reset)'
+
 
 [color]
     ui = auto
