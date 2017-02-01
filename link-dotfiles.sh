@@ -15,7 +15,7 @@ for f in `find . -name .git -prune -or -type f -path './.*' -print | sed 's|^\./
         echo "Already linked: $f"
     elif [ -L "$HOME/$f" ]; then
         echo "Updating link: $f"
-        ln -s --force "$REPO_PATH/$f" "$HOME/$f"
+        ln -s -f "$REPO_PATH/$f" "$HOME/$f"
     else
         if [ -e "$HOME/$f" ]; then
             echo -e "Backing up your existing ${bold}${f}${normal} as $f.old"
