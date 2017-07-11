@@ -3,7 +3,7 @@
 
 
 # Load stuff specific to Macs if appropriate
-[ `uname` = Darwin ] && source .osx-compatibility.sh
+[ `uname` = Darwin ] && source $HOME/.osx-compatibility.sh
 
 # list directories before files (if installed version of ls allows this)
 if man ls | grep group-directories-first >&/dev/null; then
