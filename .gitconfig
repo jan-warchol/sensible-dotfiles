@@ -28,6 +28,13 @@
 
     s = status --short   # see also --branch option
     st = status
+    #
+    # displaying changes that led to merge conflict
+    mc1 = lp -U5 --reverse MERGE_HEAD..HEAD
+    mc2 = lp -U5 --reverse HEAD..MERGE_HEAD
+    # similarly for rebase conflicts
+    rmc1 = !git lp ORIG_HEAD..$(cat $(git rev-parse --git-dir)/rebase-apply/onto)
+    rmc2 = show REBASE_HEAD
 
 
     # PRETTY LOGS
