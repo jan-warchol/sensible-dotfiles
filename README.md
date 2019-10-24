@@ -82,6 +82,10 @@ Other good stuff
 ----------------
 
 Want more?  Here are a couple things I recommend:
+- Install (smart history)[https://github.com/jan-warchol/smart-bash-history]
+  to make reusing commands you typed super efficient
+- Install (smart find)[https://github.com/jan-warchol/smart-find] to get only
+  meaningful results when you look for files
 - remap the close-to-useless Caps Lock key to control - makes pressing common
   keyboard shortcuts much more comfortable:
   - on Linux, add this to your `~/.profile`:
