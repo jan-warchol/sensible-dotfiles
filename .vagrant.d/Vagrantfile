@@ -1,7 +1,7 @@
 # default provisioning for all vagrant boxes
 
 $install_dotfiles = <<EOF
-    wget -q https://github.com/janek-warchol/.sensible-dotfiles/archive/master.tar.gz
+    wget -q https://github.com/janek-warchol/sensible-dotfiles/archive/master.tar.gz
     mkdir -p .dotfiles
     tar xf master.tar.gz --directory .dotfiles --strip-components=1
     .dotfiles/link-dotfiles.sh
