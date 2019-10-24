@@ -18,9 +18,9 @@ old - leave them behind and make your life easier!
 
 I will keep this repository small and focused, including only settings that
 are _essential_ for comfortable work environment.  If you think that something
-doesn't make a reasonable default and should be removed (or that I missed
-an important setting), please [open an issue]
-(https://github.com/janek-warchol/.sensible-dotfiles/issues).
+doesn't make a reasonable default and should be removed (or that I missed an
+important setting), please [open an
+issue](https://github.com/jan-warchol/.sensible-dotfiles/issues).
 
 
 
@@ -30,7 +30,7 @@ Installation
 Clone the repo and run the [installation script](link-dotfiles.sh)
 (it will backup your existing config files):
 
-    git clone https://github.com/janek-warchol/.sensible-dotfiles
+    git clone https://github.com/jan-warchol/.sensible-dotfiles
     cd .sensible-dotfiles/
     ./link-dotfiles.sh
 
@@ -55,8 +55,8 @@ Here's a summary of the most interesting settings:
   - improved output layout and coloring for `status`, `grep`, `blame` and `log`,
   - better default behaviour in case of merge conflicts, file renames etc.
 
-- reasonable defaults and convenient aliases for [`ls`, `less` and `grep`]
-  (.bashrc#L8):
+- reasonable defaults and convenient aliases for
+  [`ls`, `less` and `grep`](.bashrc#L8):
   - let `ls` group directories together, listing them above files,
   - better searching and navigation inside `less`,
   - did you know that `grep` can highlight matches even when piped to `less`?
@@ -107,7 +107,7 @@ Both ranger and trash-cli are available from apt repositories: `sudo apt-get
 install ranger trash-cli`.
 
 If you're interested in my personal configuration (forked from this repo), look
-[here](https://github.com/janek-warchol/my-dotfiles/tree/janek).
+[here](https://github.com/jan-warchol/my-dotfiles/tree/master).
 
 
 
