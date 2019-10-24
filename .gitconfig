@@ -55,10 +55,6 @@
     # use different color than untracked and unmerged paths have
     changed = yellow
 
-[color "grep"]
-    # similar to standalone grep
-    filename = magenta
-
 [core]
     # display non-ASCII characters (e.g. Polish) instead of quoting them
     quotepath = false
@@ -77,10 +73,6 @@
     # don't wrap lines in log and blame output (needed since git 2.1)
     log = "less -S"
     blame = "less -S"
-
-[push]
-    # git < 2.0 pushed all matching branches by default (could be dangerous)
-    default = simple
 
 [rebase]
     # automatically process "fixup!" commits when rebasing interactively

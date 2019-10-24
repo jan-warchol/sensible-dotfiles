@@ -52,8 +52,8 @@ Here's a summary of the most interesting settings:
   - aliases for displaying **awesome [logs](.gitconfig#L32)**
     (see [screenshot](https://i.imgur.com/a4auwdx.png)),
   - a dozen of common shorthands, including `ci`, `co`, `br` and `st`,
-  - improved output layout and coloring for `status`, `grep`, `blame` and `log`,
-  - better default behaviour in case of merge conflicts, file renames etc.
+  - improved output layout and coloring for `status`, `blame` and `log`,
+  - better default behaviour in case of merge conflicts, file copies etc.
 
 - reasonable defaults and convenient aliases for
   [`ls`, `less` and `grep`](.bashrc#L8):
