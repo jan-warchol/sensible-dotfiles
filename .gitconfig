@@ -15,6 +15,7 @@
 
     g3 = grep --color=always --line-number --context 3
 
+    please = push --force-with-lease   # never use plain --force!
     # unlike plain `pull`, this won't attempt a merge that may result in conflicts
     pl = pull --ff-only
 
