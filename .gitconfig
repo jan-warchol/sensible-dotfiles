@@ -36,6 +36,10 @@
     ls = !git log --color=always --decorate --graph --date=relative \
     --format=tformat:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(dim)- %an, %ad%C(reset)'
 
+    # Two-line log with wrapping (fits narrower windows)
+    l2 = log --color=always --decorate --graph --date=relative \
+    --format='%C(auto)%h%d %C(dim)%an, %ad%C(reset)%n%w(80,2,2)%s'
+
     # log All local and remote branches
     la = !git ls HEAD --branches --remotes
 
