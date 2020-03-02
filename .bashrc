@@ -19,7 +19,7 @@ export LESS='-MRi#8j.5'
 #             `------ show more information in prompt
 
 # default settings for grep
-export GREP_OPTIONS='--color --binary-files=without-match --exclude-dir .git'
+alias grep='grep --color --binary-files=without-match --exclude-dir .git'
 
 
 
